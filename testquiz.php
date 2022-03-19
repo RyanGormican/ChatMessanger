@@ -48,16 +48,16 @@ header("Location: index.php");
         die ("Connection failed: " . $db->connect_error);
     }
 
-$answer1 = $_POST[1];
-$answer2 = $_POST[2]; 
-$answer3 = $_POST[3]; 
-$answer4 = $_POST[4]; 
-$answer5 = $_POST[5]; 
-$answer6 = $_POST[6]; 
-$answer7 = $_POST[7]; 
-$answer8 = $_POST[8]; 
-$answer9 = $_POST[9]; 
-$answer10 = $_POST[10]; 
+//$answer1 = $_POST[1];
+//$answer2 = $_POST[2]; 
+//$answer3 = $_POST[3]; 
+//$answer4 = $_POST[4]; 
+//$answer5 = $_POST[5]; 
+//$answer6 = $_POST[6]; 
+//$answer7 = $_POST[7]; 
+//$answer8 = $_POST[8]; 
+//$answer9 = $_POST[9]; 
+//$answer10 = $_POST[10]; 
 $correctanswer = 0;
 $message = "";
 if (!empty($_POST)){
@@ -65,7 +65,7 @@ if (!empty($_POST)){
   $question = $loop . "question";
   $rightquestion = $question . "win";
   $rightword = $_POST['$rightquestion'];
-  $anst = "$answer" . $loop;
+  $anst = $_POST['$loop'];
     if ($anst == "" &&  $rightword != "" )
     {
    // $message = $message . "Question " . $loop . "was correct!" . "\n";
@@ -117,7 +117,7 @@ echo "<td>";
   echo "</td>";
   echo "</tr>";
 echo "<tr class = 'borderelement2'>";
-  $q2 = "SELECT DISTINCT Vocab.vocabtranslateword,  Verbs.verbtranslateword FROM Vocab, Verbs WHERE Vocab.vocabtag LIKE '%$languagedif%' AND Verbs.verbtag LIKE '%$languagedif%' AND Vocab.vocabtranslateword <> '$translateword' AND Verbs.verbtranslateword <> '$translateword' ORDER BY RAND() LIMIT 3";
+  $q2 = "SELECT DISTINCT Vocab.vocabtranslateword,  Verbs.verbtranslateword FROM Vocab, Verbs WHERE Vocab.vocabtag LIKE '%$languagedif%' AND Verbs.verbtag LIKE '%$languagedif%' AND Vocab.vocabtranslateword <> '$translateword' AND Verbs.verbtranslateword <> '$translateword' ORDER BY RAND() LIMIT 10";
 $result2 = mysqli_query($db,$q1);
 $count = 1;
   while($row2 = mysqli_fetch_assoc($result2)) {
@@ -169,7 +169,7 @@ echo "<td>";
   echo "</td>";
   echo "</tr>";
 echo "<tr class = 'borderelement2'>";
-  $q2 = "SELECT DISTINCT Vocab.vocabtranslateword,  Verbs.verbtranslateword FROM Vocab, Verbs WHERE Vocab.vocabtag LIKE '%$languagedif%' AND Verbs.verbtag LIKE '%$languagedif%' AND Vocab.vocabtranslateword <> '$translateword' AND Verbs.verbtranslateword <> '$translateword' ORDER BY RAND() LIMIT 3";
+  $q2 = "SELECT DISTINCT Vocab.vocabtranslateword,  Verbs.verbtranslateword FROM Vocab, Verbs WHERE Vocab.vocabtag LIKE '%$languagedif%' AND Verbs.verbtag LIKE '%$languagedif%' AND Vocab.vocabtranslateword <> '$translateword' AND Verbs.verbtranslateword <> '$translateword' ORDER BY RAND() LIMIT 10";
 $result2 = mysqli_query($db,$q1);
 $count = 1;
   while($row2 = mysqli_fetch_assoc($result2)) {
