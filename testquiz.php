@@ -127,12 +127,12 @@ $count = 1;
   {
 $temp = $translateword;
     $questionid = $questionid . "win";
-$questionnumber = $questionnumber . "win";
+$questionnumbered = $questionnumber . "win";
    echo "<td>";
    echo "<input type='radio' id='$questionid' name=' $questionnumbered' value='$translateword'>";
   echo " " . $temp . " ";
    echo "</td>";
-$count++;
+$count = $count++;
   }
   else
   {
@@ -180,7 +180,7 @@ $count = 1;
 $temp = $translateword;
   echo "<td>";
      $questionid = $questionid . "win";
-    $questionnumber = $questionnumber . "win";
+    $questionnumbered = $questionnumber . "win";
    echo "<input type='radio' id='$questionid' name='$questionnumbered' value='$translateword'>";
  echo " " . $temp . " ";
    echo "</td>";
