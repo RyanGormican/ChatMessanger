@@ -78,7 +78,7 @@ for ($i = 1; $i<5; $i++)
   }
 $tag = $i;
 $cooltag = $coolid . $tag;
-            echo "<a href='testquiz.php?a=$coolname'?b=$cooltag' >   <p> $dif  <i class='fa-solid fa-pencil'></i>  </p> </label> </a>";
+            echo "<a href='testquiz.php?a=$coolname'?b=$cooltag' >  $dif   </a>";
 	echo "</td>";
 }
   echo "</tr>";
