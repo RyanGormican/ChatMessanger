@@ -119,7 +119,7 @@ echo "<tr class = 'borderelement2'>";
   $q2 = "SELECT Vocab.vocabtranslateword,  Verbs.verbtranslateword FROM Vocab, Verbs WHERE Vocab.vocabtag LIKE '%$languagedif%' AND Verbs.verbtag LIKE '%$languagedif%' AND Vocab.vocabtranslateword <> '$translateword' AND Verbs.verbtranslateword <> '$translateword' ORDER BY RAND() LIMIT '$otheranswers'";
 $result2 = mysqli_query($db,$q1);
 $count = 1;
-  while($row2 = mysqli_fetch_assoc($result)) {
+  while($row2 = mysqli_fetch_assoc($result2)) {
 {
   if ($count == $position)
   {
