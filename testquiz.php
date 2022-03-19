@@ -214,7 +214,8 @@ echo "</tr>";
 mysqli_close($db);
 ?>
     <tr>
-      <input type = "submit">
+      <input type = "submit" name="submit">
+</form>
       </td>
       </td>
     </tr>
@@ -233,7 +234,6 @@ mysqli_close($db);
   </h2>
 <br>
 </div>
-</form>
 </body>
 </html>
    
