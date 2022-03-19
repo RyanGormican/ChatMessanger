@@ -14,7 +14,7 @@ if(isset($_POST["submitted"]) && $_POST["submitted"]) {
 //  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
   //if($check !== false) {
     $uploadOk = 1;
-//  } else {
+ } else {
 // $error = "check error";
     $uploadOk = 0;
   }
