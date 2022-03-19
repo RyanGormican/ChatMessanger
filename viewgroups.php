@@ -59,7 +59,7 @@ header("Location: index.php");
     }
 $q9 = "SELECT Ranks.rankid FROM Ranks, Profile WHERE Profile.profile_id = '$id'";
 $r9 = $db->query($q9);
-$rankrow = $r9->fetch_assoc();
+while ( $rankrow = $r9->fetch_assoc()) {
 $rankt =  $rankrow["rankid"];
 $q1 = "SELECT  Groups.groupname,Groups.group_id, FROM Groups, Ranks, Members WHERE Groups.ranktag LIKE '%$rankt%'";
 $result = mysqli_query($db,$q1);
@@ -69,6 +69,7 @@ echo "<td>";
 	  echo "<a href='group.php?a=$group_id' >";
 	  echo "</td>";
 	  echo "</tr>";
+}
 }
 ?>
 <tr>
