@@ -21,10 +21,6 @@ for (var i=0; i < results.length; i++)
 var t = i + 1;
 var m = t + "tag";
           var json_result = results[i];
-else
-{
-
-}
 }
 }
        
