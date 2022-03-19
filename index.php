@@ -82,7 +82,7 @@ if (isset($_POST["submitted"]) && $_POST["submitted"])
 <h2 class = "maintitle" > <i class="fa-solid fa-globe"></i>  Jibbernet <i class="fa-solid fa-globe"></i> </h2>
 <?php
 
- //$db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "heroku_4db4cf2503e4bbb");
+ $db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "heroku_4db4cf2503e4bbb");
     if ($db->connect_error)
     {
         die ("Connection failed: " . $db->connect_error);
