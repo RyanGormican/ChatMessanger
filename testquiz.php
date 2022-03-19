@@ -133,13 +133,13 @@ $count = 1;
     $randomnum2 = rand(0,1);
   if ($randomnum2 == 0 )
 {
-$temp = $row2['vocabtranslateword'];
+$temp = $row2["vocabtranslateword"];
  echo "<input type='radio' id='$questionid' name='$questionnumber' value='$temp'>";
   echo '<label for="questionid">$row2["vocabtranslateword"]</label>';
 }
   else if ($randomnum2 == 1)
   {
-$temp = $row2['verbtranslateword'];
+$temp = $row2["verbtranslateword"];
    echo "<input type='radio' id='$questionid' name='$questionnumber' value='$temp'>";
   echo '<label for="questionid">$row2["verbtranslateword"]</label>';
   }
@@ -175,13 +175,13 @@ $count = 1;
     $randomnum2 = rand(0,1);
   if ($randomnum2 == 0 )
 {
-$temp = $row2['vocabtranslateword'];
+$temp = $row2["vocabtranslateword"];
  echo "<input type='radio' id='$questionid' name='$questionnumber' value='$temp'>";
   echo '<label for="questionid">$row2["vocabtranslateword"]</label>';
 }
   else if ($randomnum2 == 1)
   {
-	  $temp = $row2['verbtranslateword'];
+	  $temp = $row2["verbtranslateword"];
    echo "<input type='radio' id='$questionid' name='$questionnumber' value='$temp'>";
   echo '<label for="questionid">$row2["verbtranslateword"]</label>';
   }
