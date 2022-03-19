@@ -63,7 +63,6 @@ $rankrow = $r9->fetch_assoc();
 $rankt =  $rankrow["rankid"];
 $q1 = "SELECT  Groups.groupname,Groups.group_id, FROM Groups, Ranks, Members WHERE Members.groupsid = Groups.groupsid AND Groups.ranktag LIKE '%$rankt%';
 $result = mysqli_query($db,$q1);
-echo "<table>";
  while($row = mysqli_fetch_assoc($result)) {   
 echo "<tr class = 'borderelement2'>";
 echo "<td>";
