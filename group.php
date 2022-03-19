@@ -23,8 +23,7 @@ header("Location: index.php");
 ?>
 
 <?php 
-	
-class ChatRooms
+class group_Instance
 {
 	private $chat_id;
 	private $user_id;
@@ -102,17 +101,14 @@ class ChatRooms
 
 	function get_all_chat_data()
 	{
-		$query = "
-		SELECT * FROM chatrooms 
+		$q1 = "SELECT * FROM chatrooms 
 			INNER JOIN chat_user_table 
 			ON chat_user_table.user_id = chatrooms.userid 
 			ORDER BY chatrooms.id ASC
 		";
 
-		$statement = $this->connect->prepare($query);
-
-		$statement->execute();
-
+		$results = $this->connect->prepare($query);
+		$results->execute();
 		return $statement->fetchAll(PDO::FETCH_ASSOC);
 	}
 }
@@ -120,9 +116,7 @@ class ChatRooms
 ?>
 <?php
 
-//ChatUser.php
-
-class ChatUser
+class chattersInstance
 {
 	private $user_id;
 	private $user_name;
