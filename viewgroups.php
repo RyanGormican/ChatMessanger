@@ -41,7 +41,6 @@ header("Location: index.php");
     </tr>
     <tr>
     <td>
-    <a href="profile.php"> 
        <?php
       echo $name;
           ?>
