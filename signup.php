@@ -9,14 +9,14 @@ $reg_Email = "/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/";
 $reg_Pswd = "/^(\S*)?\d+(\S*)?$/";
 $reg_User="/\W/g";
 $email = "";
-$photo2 = basename($_FILES["fileToUpload"]["name"]);
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+//$photo2 = basename($_FILES["fileToUpload"]["name"]);
+//$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 if(isset($_POST["submitted"]) && $_POST["submitted"]) {
-  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-  if($check !== false) {
+//  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+  //if($check !== false) {
     $uploadOk = 1;
-  } else {
-$error = "check error";
+//  } else {
+// $error = "check error";
     $uploadOk = 0;
   }
 }
@@ -52,9 +52,9 @@ $validate = false;
     $email = trim($_POST["email"]);
     $username = trim($_POST["username"]);
     $password = trim($_POST["password"]); 
- $photo = basename($_FILES["fileToUpload"]["name"]);
-$photo = trim($photo);
-    $db = new mysqli("localhost", "rdg499", "cs21520", "rdg499");
+ //$photo = basename($_FILES["fileToUpload"]["name"]);
+//$photo = trim($photo);
+  //  $db = new mysqli("localhost", "rdg499", "cs21520", "rdg499");
     if ($db->connect_error)
     {
 $error = "connection failure";
@@ -95,9 +95,9 @@ $error = "connection failure";
     if($validate == true)
     {
 $id = "image_id";
-	$q2 = "INSERT INTO Image476(image_url) VALUES ('$photo')";
+	// $q2 = "INSERT INTO Image476(image_url) VALUES ('$photo')";
         $r31259104 = $db->query($q2);
-      $q3 ="INSERT INTO Profile476 (email, profile_name, password, type) VALUES ('$email', '$username','$password','member')";
+      $q3 ="INSERT INTO Profile (email, profile_name, password, type) VALUES ('$email', '$username','$password','member')";
         $r3 = $db->query($q3);
         
         if ($r3 === true)
