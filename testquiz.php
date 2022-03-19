@@ -67,27 +67,29 @@ if (!empty($_POST)){
   $anst = "$answer" . $loop;
     if ($anst == $rightquestion )
     {
-    $message = $message . "Question " . $loop . "was correct!" . "\n";
+   // $message = $message . "Question " . $loop . "was correct!" . "\n";
     $correctanswer = $correctanswer +1;
     }
     else
     {
-        $message = $message . "Question " . $loop . "was not correct!" . "\n";
+   //     $message = $message . "Question " . $loop . "was not correct!" . "\n";
     }
   }
 $totalscore = $correctanswer / 10;
 if ($totalscore >= 0.8)
 {
-  $message = $message . "Congratulations you passed and your rank has now increased!";
+//  $message = $message . "Congratulations you passed and your rank has now increased!";
     $ranking2 = $languagedif; 
     $q10 = "UPDATE RANKS SET rankid= '$ranking2' WHERE id = '$id' AND ranklanguage = '$languagename'";
+echo "<script>alert('Congratulations you passed and your rank has now increased!);window.location.href='testoverview.php;</script>";
     $updatequery = mysqli_query($db,$q10);
     }
 else
 {
-  $message = $message . "To bad you did not pass the test! Your rank remains the same.";
+  echo "<script>alert('To bad you did not pass the test! Your rank remains the same');window.location.href='testoverview.php';</script>";
+//  $message = $message . "To bad you did not pass the test! Your rank remains the same.";
 }
-  echo "<script>alert("'.$message.'");document.location='testoverview.php';</script>";
+
 
 }
 $q1 = "SELECT DISTINCT Vocab.vocabword, Vocab.vocabtranslateword, Verbs.verbword, Verbs.verbtranslateword FROM Vocab, Verbs WHERE Vocab.vocabtag LIKE '%$languagedif%' AND Verbs.verbtag LIKE '%$languagedif%'  ORDER BY RAND() LIMIT 10";
