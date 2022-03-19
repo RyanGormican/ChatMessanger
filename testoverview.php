@@ -56,6 +56,8 @@ $rankrow = $r9->fetch_assoc();
 echo "<td>";
 echo "Your ranking is currently " . $rankrow["rankid"] ;
 echo "</td>";
+$test = $rankrow["rankid"];
+$num = substr($test, -1);
 for ($i = 1; $i<5; $i++)
 {
   $dif;
