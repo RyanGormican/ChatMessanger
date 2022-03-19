@@ -1,6 +1,6 @@
 window.onload=function(){
 document.getElementById("login").addEventListener("submit", validateLogin, false);
-}
+};
 function validateLogin(event)
 {
 var email = document.forms.login.email.value;
