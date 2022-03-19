@@ -88,7 +88,7 @@ else
   $message = $message . "To bad you did not pass the test! Your rank remains the same.";
 }
   echo "<script type='text/javascript'>alert('$message');
-window.location.href='testoverview.php';
+document.location='testoverview.php';
 </script>";
 
 }
