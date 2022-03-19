@@ -124,6 +124,7 @@ $count = 1;
   if ($count == $position)
   {
 $count++;
+$temp = $translateword;
     $questionid = $questionid . "win";
    echo "<td>";
    echo "<input type='radio' id='$questionid' name='$questionnumber' value='$translateword'>";
@@ -173,6 +174,7 @@ $count = 1;
 {
   if ($count == $position)
   {
+$temp = $translateword;
 $count++;
   echo "<td>";
      $questionid = $questionid . "win";
