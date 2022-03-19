@@ -70,13 +70,13 @@ header("Location: index.php");
 <body class = "background">
 <div class = "messengerWindowsignup"> 
 		<br />
-        <h3 class="text-center"> </h3>
+         <h2 class = "profileBorder"></h2>
         <br />
 		<div class="row">
 			
-			<div class="col-lg-8">
+			<div class="col-lg-6">
 				<div class="card">
-					<div class="card-header"><h3> $name </h3></div>
+					<div class="card-header"><h2><?php echo $name ?> </h2></div>
 					<div class="card-body" id="messages_area">
 					<?php
 					foreach($chat_data as $chat)
