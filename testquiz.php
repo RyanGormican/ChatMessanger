@@ -77,7 +77,7 @@ if (!empty($_POST)){
     }
   }
 $totalscore = $correctanswer / 10;
-if ($correctanswer >= 8)
+if ($correctanswer >= 6)
 {
 //  $message = $message . "Congratulations you passed and your rank has now increased!";
     $ranking2 = $languagedif; 
