@@ -85,7 +85,7 @@ echo "<td>";
   <i class="fa-solid fa-car"></i> 
   </td>
   <td>
-   <a href="index.php"> Logout </a>
+   <a href="logout.php"> Logout </a>
   </td>
   <td colspan = "5">
   </td>
