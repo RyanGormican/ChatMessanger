@@ -1,11 +1,11 @@
 window.onload=function(){
 document.getElementById("signup").addEventListener("submit", validateSignup, false);
-}
+};
 function validateSignup(event)
 {
 var email = document.forms.signup.email.value;
 var username = document.forms.signup.username.value;
-var picture = document.forms.signup.picture.value;
+//var picture = document.forms.signup.picture.value;
 var password = document.forms.signup.password.value;
 var passwordconfirm = document.forms.signup.passwordconfirm.value;
 var fullvalidate = false;
@@ -89,17 +89,17 @@ signupelementwrong[4] = false;
 
 
 
-for(var i=0; i<5; i++)
+for(var j=0; j<5; j++)
 {
-if(signupelementwrong[i] == true)
+if(signupelementwrong[j] == true)
 {
-var changeclass = signupelement[i];
+var changeclass = signupelement[j];
  document.getElementById(changeclass).className = "borderelementerror"; 
 fullvalidate = false;
 }
-else if(signupelementwrong[i] == false)
+else if(signupelementwrong[j] == false)
 {
-var mes = signupelement[i] + "mes";
+var mes = signupelement[j] + "mes";
 document.getElementById(signupelement[i]).className = "borderelement2";
 document.getElementById(mes).innerHTML = "";
 }
