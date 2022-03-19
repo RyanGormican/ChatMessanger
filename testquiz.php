@@ -113,7 +113,7 @@ if ($randomnum == 0 )
   $translateword = $row['vocabtranslateword'];
   echo "<tr class = 'borderelement2'>";
 echo "<td>";
-  echo "What does" . $word . " mean? "  ;
+  echo "What does " . $word . " mean? "  ;
   echo "</td>";
   echo "</tr>";
 echo "<tr class = 'borderelement2'>";
@@ -153,7 +153,7 @@ else if ($randomnum == 1)
   $translateword = $row['verbtranslateword'];
   echo "<tr class = 'borderelement2'>";
 echo "<td>";
-  echo "What does" . $verb . " mean? "  ;
+  echo "What does " . $verb . " mean? "  ;
   echo "</td>";
   echo "</tr>";
 echo "<tr class = 'borderelement2'>";
