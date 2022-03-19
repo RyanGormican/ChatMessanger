@@ -100,7 +100,7 @@ echo "<table class = 'messengerWindow2'>";
 $questionnumber = 0;
  while($row = mysqli_fetch_assoc($result)) {
 {
-  $questionnumber = $questionnumber +1;
+  $questionnumber++;
   $questionid = $questionnumber . "question";
   $num = substr($languagedif, -1);
 $otheranswers = $num + 2;
@@ -130,6 +130,7 @@ $count = 1;
   }
   else
   {
+$count++;
     $randomnum2 = rand(0,1);
   if ($randomnum2 == 0 )
 {
@@ -172,6 +173,7 @@ $count = 1;
   }
   else
   {
+	$count++;
     $randomnum2 = rand(0,1);
   if ($randomnum2 == 0 )
 {
