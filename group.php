@@ -8,6 +8,7 @@ if(isset($_SESSION["email"]))
         die ("Connection failed: " . $db->connect_error);
     }
 $id = $_SESSION['id'];
+$name = $_SESSION['name'];
 $db->close();
  if(isset($_GET['a']) ){
     $_SESSION['info']=$_GET['a'];
@@ -32,12 +33,6 @@ header("Location: index.php");
     <link href="vendor-front/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="project.css"/>
 	<style type="text/css">
-		html,
-		body {
-		  height: 100%;
-		  width: 100%;
-		  margin: 0;
-		}
 		#wrapper
 		{
 			display: flex;
@@ -48,36 +43,22 @@ header("Location: index.php");
 		{
 			flex-grow : 1;
 		}
-		#messages {
-			height: 200px;
-			background: whitesmoke;
-			overflow: auto;
-		}
 		#chat-room-frm {
 			margin-top: 10px;
-		}
-		
-
-		#messages_area
-		{
-			height: 650px;
-			overflow-y: auto;
-			background-color:#e6e6e6;
 		}
 
 	</style>
 </head>
 <body class = "background">
 <div class = "messengerWindowsignup"> 
-		<br />
-         <h2 class = "profileBorder"></h2>
-        <br />
-		<div class="row">
-			
-			<div class="col-lg-6">
-				<div class="card">
-					<div class="card-header"><h2><?php echo $name ?> </h2></div>
-					<div class="card-body" id="messages_area">
+<div class="row">
+<div class="col-lg-6">
+<div class="card">
+<div class="card-header">
+	<h2>
+	<?php echo $name ?> 
+	</h2></div>
+<div class="card-body" id="messages_area">
 					<?php
 					foreach($chat_data as $chat)
 					{
@@ -152,7 +133,7 @@ header("Location: index.php");
 	
 	$(document).ready(function(){
 
-		var conn = new WebSocket('ws://localhost:8080');
+		var conn = new WebSocket('wss://localhost:8080');
 		conn.onopen = function(e) {
 		    console.log("Connection established!");
 		};
