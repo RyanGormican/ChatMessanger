@@ -32,22 +32,6 @@ header("Location: index.php");
     <script type="text/javascript" src="vendor-front/parsley/dist/parsley.min.js"></script>
     <link href="vendor-front/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="project.css"/>
-	<style type="text/css">
-		#wrapper
-		{
-			display: flex;
-		  	flex-flow: column;
-		  	height: 100%;
-		}
-		#remaining
-		{
-			flex-grow : 1;
-		}
-		#chat-room-frm {
-			margin-top: 10px;
-		}
-
-	</style>
 </head>
 <body class = "background">
 <div class = "messengerWindowsignup"> 
@@ -58,13 +42,15 @@ header("Location: index.php");
 	<h2>
 	<?php echo $name ?> 
 	</h2></div>
-<div class="card-body" id="messages_area">
-					<?php
-					foreach($chat_data as $chat)
-					{
-						if(isset($_SESSION['user_data'][$chat['userid']]))
-						{
-							$from = 'Me';
+<div class="messages">
+<?php
+$group_room = new groupInstance; 
+$groupmes = $
+foreach($groupmes
+{
+if(isset($_SESSION['user_data'][$chat['userid']]))
+{
+$fromuser='$id';
 							$row_class = 'row justify-content-start';
 							$background_class = 'text-dark alert-light';
 						}
@@ -122,17 +108,13 @@ header("Location: index.php");
 				<?php
 				}
 				?>
-
-				<div class="card mt-3">
-
-			</div>
-		</div>
-	</div>
+<div class="card mt-3">
+</div>
+</div>
+</div>
 </body>
 <script type="text/javascript">
-	
 	$(document).ready(function(){
-
 		var conn = new WebSocket('wss://localhost:8080');
 		conn.onopen = function(e) {
 		    console.log("Connection established!");
