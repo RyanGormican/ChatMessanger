@@ -61,7 +61,7 @@ $q9 = "SELECT Ranks.rankid FROM Ranks, Profile WHERE Profile.profile_id = '$id'"
 $r9 = $db->query($q9);
 $rankrow = $r9->fetch_assoc();
 $rankt =  $rankrow["rankid"];
-$q1 = "SELECT  Groups.groupname,Groups.group_id, FROM Groups, Ranks, Members WHERE Members.groupsid = Groups.groupsid AND Groups.ranktag LIKE '%$rankt%';
+$q1 = "SELECT  Groups.groupname,Groups.group_id, FROM Groups, Ranks, Members WHERE Members.groupsid = Groups.groupsid AND Groups.ranktag LIKE '%$rankt%'";
 $result = mysqli_query($db,$q1);
  while($row = mysqli_fetch_assoc($result)) {   
 echo "<tr class = 'borderelement2'>";
