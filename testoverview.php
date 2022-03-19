@@ -24,7 +24,6 @@ header("Location: index.php");
     <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" type = "text/css" href="project.css">
 <script src="https://kit.fontawesome.com/cb59c9bd28.js" crossorigin="anonymous"></script>
-<script src='signup.js'></script>
     <title>
     Test Overview
       </title>
