@@ -30,12 +30,8 @@ header("Location: index.php");
 <body class = "background">
 <div class = "messengerWindowsignup"> 
   <h2 class = "profileBorder">
-  <table>
   <tr>
   <td>
-    <img class = "groupimages" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png">
-    </td>
-    <td>
 <i class="fa-solid fa-book-atlas"></i> <a href="testoverview.php" >  Take Test </a> 
     </td>
     </tr>
@@ -47,7 +43,6 @@ header("Location: index.php");
           </a> 
     </td>
     </tr>
-    </table>
   </h2>
   <table class = "messengerWindow2">
 <tr>
@@ -55,70 +50,28 @@ header("Location: index.php");
  <?php echo $error;?>
 </td>
 </tr>
-      <tr>
-        <td class = "borderelement2" colspan = "2">   
-        <table>
-        <tr>
-       <td>
-      <img class = "groupimages" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png">
-       </td>
-       <td>
-       Group name
-       </td>
-       </tr>
-       </table>
-       </td>
-      </tr>
-      <tr>
-         <td class = "borderelement2" colspan ="2">
-          <table>
-        <tr>
-       <td>
-      <img class = "groupimages" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png">
-       </td>
-       <td>
-       Group name
-       </td>
-       </tr>
-       </table>
-</td> 
-   
-</tr>
+  $db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "heroku_4db4cf2503e4bbb");
+    if ($db->connect_error)
+    {
+        die ("Connection failed: " . $db->connect_error);
+    }
+$q9 = "SELECT Ranks.rankid FROM Ranks, Profile WHERE Profile.profile_id = '$id'";
+$r9 = $db->query($q9);
+$rankrow = $r9->fetch_assoc();
+$rankt =  $rankrow["rankid"];
+$q1 = "SELECT  Groups.groupname,Groups.group_id, FROM Groups, Ranks, Members WHERE Members.groupsid = Groups.groupsid AND Groups.ranktag LIKE '%$rankt%';
+$result = mysqli_query($db,$q1);
+ while($row = mysqli_fetch_assoc($result)) {   
+echo "<tr class = 'borderelement2'>";
+echo "<td>";
+	  echo "<a href='group.php?a=$groupname&b=$cooltag' >
+	  echo "</td>";
+	  echo "</tr>";
+}
 <tr>
-   <td class = "borderelement2" colspan = "2">
-    <table>
-        <tr>
-       <td>
-      <img class = "groupimages" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png">
-       </td>
-       <td>
-       Group name
-       </td>
-       </tr>
-       </table>
-</td>
-</tr>
-<tr> 
-   <td class = "borderelement2" colspan = "2">
-    <table>
-        <tr>
-       <td>
-      <img class = "groupimages" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png">
-       </td>
-       <td>
-       Group name
-       </td>
-       </tr>
-       </table>
-    </td>
-</tr>
-<tr>
-    <td class = "borderelement2">
+    <td class = "borderelement2" colspan = "2">
     <a href="creategroup.php" > <i class="fa-solid fa-user-group"></i> Create  </a>
   </td>
- <td class = "borderelement2" id = "statusborder">
-  <a href="searchgroups.php" > <i class="fa-solid fa-magnifying-glass"></i> Search  </a>   
-</td> 
 </tr>
 
     </table>
