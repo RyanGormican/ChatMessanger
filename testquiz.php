@@ -69,7 +69,7 @@ if (!empty($_POST)){
     if ($anst == $rightword )
     {
    // $message = $message . "Question " . $loop . "was correct!" . "\n";
-    $correctanswer = $correctanswer +1;
+    $correctanswer = $correctanswer++;
     }
     else
     {
