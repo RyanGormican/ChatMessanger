@@ -78,7 +78,7 @@ for ($i = 1; $i<5; $i++)
   {
     $dif = "Scholar";
   }
-if ($num > $i)
+if ($num < $i)
 {
 $tag = $i;
 $cooltag = $coolid . $tag;
