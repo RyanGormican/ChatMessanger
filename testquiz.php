@@ -77,8 +77,9 @@ if (!empty($_POST)){
     }
   }
 $totalscore = $correctanswer / 10;
+$needright = 6;
 //echo '<script type="text/javascript">alert("'.$correctanswer.'");</script>';
-if ($correctanswer >= 6)
+if ($correctanswer >= $needright)
 {
 //  $message = $message . "Congratulations you passed and your rank has now increased!";
     $ranking2 = $languagedif; 
