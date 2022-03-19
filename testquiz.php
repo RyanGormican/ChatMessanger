@@ -87,9 +87,9 @@ else
 {
   $message = $message . "To bad you did not pass the test! Your rank remains the same.";
 }
-  echo "<script type='text/javascript'>alert("'.$message.'");
+  echo '<script type='text/javascript'>alert("'.$message.'");
 document.location='testoverview.php';
-</script>";
+</script>';
 
 }
 $q1 = "SELECT DISTINCT Vocab.vocabword, Vocab.vocabtranslateword, Verbs.verbword, Verbs.verbtranslateword FROM Vocab, Verbs WHERE Vocab.vocabtag LIKE '%$languagedif%' AND Verbs.verbtag LIKE '%$languagedif%'  ORDER BY RAND() LIMIT 10";
