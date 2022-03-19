@@ -94,7 +94,6 @@ window.location.href='testoverview.php';
 }
 $q1 = "SELECT Vocab.vocabword, Vocab.vocabtranslateword, Verbs.verbword, Verbs.verbtranslateword FROM Vocab, Verbs WHERE Vocab.vocabtag LIKE '%$languagedif%' AND Verbs.verbtag LIKE '%$languagedif%'  ORDER BY RAND() LIMIT 10";
 $result = mysqli_query($db,$q1);
-echo "<tr class = 'borderelement2'>";
    
 echo "<table class = 'messengerWindow2'>";
 $questionnumber = 0;
@@ -125,8 +124,10 @@ $count = 1;
   if ($count == $position)
   {
     $questionid = $questionid . "win";
+   echo "<td>";
    echo "<input type='radio' id='$questionid' name='$questionnumber' value='$translateword'>";
   echo '<label for="questionid">$translateword </label>';
+   echo "</td>";
   }
   else
   {
@@ -134,15 +135,19 @@ $count++;
     $randomnum2 = rand(0,1);
   if ($randomnum2 == 0 )
 {
+   echo "<td>";
 $temp = $row2["vocabtranslateword"];
  echo "<input type='radio' id='$questionid' name='$questionnumber' value='$temp'>";
   echo '<label for="questionid">$row2["vocabtranslateword"]</label>';
+   echo "</td>";
 }
   else if ($randomnum2 == 1)
   {
+     echo "<td>";
 $temp = $row2["verbtranslateword"];
    echo "<input type='radio' id='$questionid' name='$questionnumber' value='$temp'>";
   echo '<label for="questionid">$row2["verbtranslateword"]</label>';
+      echo "</td>";
   }
 }
 }
@@ -167,9 +172,11 @@ $count = 1;
 {
   if ($count == $position)
   {
+  echo "<td>";
      $questionid = $questionid . "win";
    echo "<input type='radio' id='$questionid' name='$questionnumber' value='$translateword'>";
   echo '<label for="questionid">$translateword </label>';
+   echo "</td>";
   }
   else
   {
@@ -177,15 +184,19 @@ $count = 1;
     $randomnum2 = rand(0,1);
   if ($randomnum2 == 0 )
 {
+ echo "<td>";
 $temp = $row2["vocabtranslateword"];
  echo "<input type='radio' id='$questionid' name='$questionnumber' value='$temp'>";
   echo '<label for="questionid">$row2["vocabtranslateword"]</label>';
+   echo "</td>";
 }
   else if ($randomnum2 == 1)
   {
+   echo "<td>";
 	  $temp = $row2["verbtranslateword"];
    echo "<input type='radio' id='$questionid' name='$questionnumber' value='$temp'>";
   echo '<label for="questionid">$row2["verbtranslateword"]</label>';
+   echo "</td>";
   }
 }
 }
