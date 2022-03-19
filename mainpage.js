@@ -44,6 +44,6 @@ if (errorclear == true)
 if (errorclear == false)
 {
 event.preventDefault();
- document.getElementById("loginsucess").innerHTML="";
+ //document.getElementById("loginsucess").innerHTML="";
      } 
 }
