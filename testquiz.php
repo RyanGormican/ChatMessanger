@@ -35,7 +35,7 @@ header("Location: index.php");
       </title>
   </head>
 <body class = "background">
-  <form action = "testquiz.php" method= "post">
+  <form action = "testoverview.php" method= "post">
 <div class = "messengerWindowsignup"> 
 <h2> <i class="fa-solid fa-book-atlas"></i></h2>
 <input type="hidden" name="submitted" value="1"/>
