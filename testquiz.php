@@ -64,8 +64,8 @@ if (!empty($_POST)){
   for ($loop = 1; $loop<= 10; $loop++){
   $question = $loop . "question";
   $rightquestion = $question . "win";
-  $rightword = $_POST['$rightquestion'];
-  $anst = $_POST['$loop'];
+  $rightword = $_POST[$rightquestion];
+  $anst = $_POST[$loop];
     if ($anst == "" &&  $rightword != "" )
     {
    // $message = $message . "Question " . $loop . "was correct!" . "\n";
@@ -136,7 +136,6 @@ $count = $count++;
   }
   else
   {
-$count++;
     $randomnum2 = rand(0,1);
   if ($randomnum2 == 0 )
 {
@@ -154,6 +153,7 @@ $temp = $row2["verbtranslateword"];
   echo " " . $temp . " ";
       echo "</td>";
   }
+$count++;
 }
 }
 }
@@ -188,7 +188,6 @@ $count++;
   }
   else
   {
-	$count++;
     $randomnum2 = rand(0,1);
   if ($randomnum2 == 0 )
 {
@@ -206,6 +205,7 @@ $temp = $row2["vocabtranslateword"];
  echo " " . $temp . " ";
    echo "</td>";
   }
+$count++;
 }
 }
 }
