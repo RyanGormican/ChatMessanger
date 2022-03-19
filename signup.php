@@ -1,5 +1,4 @@
 <?php
-/*
 $target_dir = "uploads/";
 $validate = true;
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -114,7 +113,6 @@ $id = "image_id";
     }
 
 }
-*/
 ?>
 
 
