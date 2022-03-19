@@ -31,7 +31,7 @@ else
   </head>
 <body class = "background">
 <div class = "messengerWindowsignup"> 
-<h2> <i class="fa-solid fa-book-atlas"></i> Choose a Test <i class="fa-solid fa-book-atlas"></i> </h2>
+<h2 class = "borderelement2"> <i class="fa-solid fa-book-atlas"></i> Choose a Test <i class="fa-solid fa-book-atlas"></i> </h2>
 <input type="hidden" name="submitted" value="1"/>
   <table class = "messengerWindow2"> 
 <?php
