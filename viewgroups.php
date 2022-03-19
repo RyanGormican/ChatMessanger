@@ -61,12 +61,17 @@ $q9 = "SELECT Ranks.rankid FROM Ranks, Profile WHERE Profile.profile_id = '$id'"
 $r9 = $db->query($q9);
 while ( $rankrow = $r9->fetch_assoc()) {
 $rankt =  $rankrow["rankid"];
-$q1 = "SELECT  Groups.groupname,Groups.group_id, FROM Groups, Ranks, Members WHERE Groups.ranktag LIKE '%$rankt%'";
+$q1 = "SELECT  Groups.groupname,Groups.group_id Groups.groupdescription, FROM Groups, Ranks, Members WHERE Groups.ranktag LIKE '%$rankt%'";
 $result = mysqli_query($db,$q1);
  while($row = mysqli_fetch_assoc($result)) {   
+$groupN = $result["groupname"];
+$groupD= $result["groupdescription"];
 echo "<tr class = 'borderelement2'>";
 echo "<td>";
-	  echo "<a href='group.php?a=$group_id' >";
+	  echo "<a href='group.php?a=$group_id' > $groupN </a>" ;
+	  echo "</td>";
+	  echo "<td>";
+	  echo $groupD;
 	  echo "</td>";
 	  echo "</tr>";
 }
