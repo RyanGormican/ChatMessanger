@@ -50,7 +50,7 @@ $coolname =$row['languagename'];
 echo "<td>";
 echo "$coolname";
 echo "</td>";
-$q9 = "SELECT Ranks.rankid FROM Ranks, Profile WHERE Profile.profile_id = '$id' AND Ranks.ranklanguage = '$coolname'";
+$q9 = "SELECT Ranks.rankid FROM Ranks, Profile WHERE Profile.profile_id = '$id' AND Ranks.profile_id = Profile.profile_id AND Ranks.ranklanguage = '$coolname'";
 $r9 = $db->query($q9);
 $rankrow = $r9->fetch_assoc();
 echo "<td>";
