@@ -80,8 +80,8 @@ $totalscore = $correctanswer / 10;
 if ($totalscore >= 0.8)
 {
   $message = $message . "Congratulations you passed and your rank has now increased!";
-    $ranking2 = substr($languagedif, -1);  
-    $q10 = "UPDATE RANKS SET rankid= '$ranking2' WHERE id = '$id'";
+    $ranking2 = $languagedif; 
+    $q10 = "UPDATE RANKS SET rankid= '$ranking2' WHERE id = '$id' AND ranklanguage = '$languagename'";
     $updatequery = mysqli_query($db,$q10);
     }
 else
