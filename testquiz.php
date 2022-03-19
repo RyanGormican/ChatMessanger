@@ -77,6 +77,9 @@ if (!empty($_POST)){
     }
   }
 $totalscore = $correctanswer / 10;
+<script>
+    console.log(<?= json_encode($correctanswer); ?>);
+</script>
 if ($correctanswer >= 6)
 {
 //  $message = $message . "Congratulations you passed and your rank has now increased!";
