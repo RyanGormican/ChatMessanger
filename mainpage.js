@@ -1,34 +1,6 @@
 window.onload=function(){
 document.getElementById("login").addEventListener("submit", validateLogin, false);
 }
-window.setInterval(function(){
-}, 60000);
-function pollCheck()
-{
-var send1 = document.getElementById("1").name;
-var send2 = document.getElementById("2").name;
-var send3 = document.getElementById("3").name;
-var send4 = document.getElementById("4").name;
-var send5 = document.getElementById("5").name;
-       var  xmlhttp = new XMLHttpRequest();
- xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-        var results = JSON.parse(this.responseText);
-if (results.length > 0) 
-              {
-for (var i=0; i < results.length; i++)
-{
-var t = i + 1;
-var m = t + "tag";
-          var json_result = results[i];
-}
-       
-}
-}
-xmlhttp.open("GET", "mainpageprocess.php?a=" + send1 + "&b=" + send2 + "&c=" + send3 + "&d=" + send4 + "&e=" + send5, true);
-        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xmlhttp.send();
-}
 function validateLogin(event)
 {
 var email = document.forms.login.email.value;
