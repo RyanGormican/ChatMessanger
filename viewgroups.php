@@ -7,7 +7,7 @@ if(isset($_SESSION["email"]))
     {
         die ("Connection failed: " . $db->connect_error);
     }
-$name = $_SESSION['profile_name'];
+$name = $_SESSION['name'];
 $db->close();
   }
 else
@@ -23,7 +23,6 @@ header("Location: index.php");
     <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" type = "text/css" href="project.css">
 <script src="https://kit.fontawesome.com/cb59c9bd28.js" crossorigin="anonymous"></script>
-<script src='signup.js'></script>
     <title>
   View groups
       </title>
