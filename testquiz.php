@@ -110,7 +110,7 @@ if ($randomnum == 0 )
 {
   $temp = $otheranswers +1;
   $word = $row['vocabword'];
-  $position = rand(1, $temp);
+  $position = rand(1, 10);
   $translateword = $row['vocabtranslateword'];
   echo "<tr class = 'borderelement2'>";
 echo "<td>";
@@ -162,7 +162,7 @@ else if ($randomnum == 1)
 {
   $temp = $otheranswers +1;
   $verb = $row['verbword'];
-  $position = rand(1, $temp);
+  $position = rand(1, 10);
   $translateword = $row['verbtranslateword'];
   echo "<tr class = 'borderelement2'>";
 echo "<td>";
