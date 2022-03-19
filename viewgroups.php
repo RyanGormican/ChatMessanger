@@ -8,6 +8,7 @@ if(isset($_SESSION["email"]))
         die ("Connection failed: " . $db->connect_error);
     }
 $name = $_SESSION['name'];
+$id = $_SESSION['id'];
 $db->close();
   }
 else
