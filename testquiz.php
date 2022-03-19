@@ -63,16 +63,18 @@ $message = "";
 if (!empty($_POST)){
   for ($loop = 1; $loop<= 10; $loop++){
   $question = $loop . "question";
-  $rightquestion = " ". $question . "win";
+  $rightquestion = $question . "win";
   $rightword = $_POST[$rightquestion];
   $anst = $_POST[$loop];
     if ( isset($_POST[$rightword]) && !empty($_POST[$rightword]) )
     {
    // $message = $message . "Question " . $loop . "was correct!" . "\n";
     $correctanswer = $correctanswer++;
+console.log("PASS");
     }
     else
     {
+	 console.log("FAIL");
    //     $message = $message . "Question " . $loop . "was not correct!" . "\n";
     }
   }
