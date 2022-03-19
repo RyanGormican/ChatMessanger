@@ -70,7 +70,7 @@ $groupD= $row['groupdescription'];
 $groupI = $row['group_id'];
 echo "<tr class = 'borderelement2'>";
 echo "<td>";
-	  echo "<a href='group.php?a=$groupI > $groupN </a>" ;
+	  echo "<a href='group.php?a=$groupI' > $groupN </a>" ;
 	  echo "</td>";
 	  echo "<td>";
 	  echo $groupD;
