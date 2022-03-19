@@ -129,7 +129,6 @@ Password:
 </td>
 </tr>
 </table>
-<a href="viewgroups.php" > TEMP  <i class="fas fa-user-plus"></i> </a>
 </div>
 </body>
 </html>
