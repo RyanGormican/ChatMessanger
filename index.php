@@ -26,25 +26,9 @@ if (isset($_POST["submitted"]) && $_POST["submitted"])
     {
         $validate = false;
     }
-    else
-    {
-        $emailMatch = preg_match($reg_Email, $email);
-        if($email == null || $email == "" || $emailMatch == false)
-        {
-            $validate = false;
-        }
-        
-        $pswdLen = strlen($password);
-        $passwordMatch = preg_match($reg_Pswd, $password);
-        if($password == null || $password == "" || $pswdLen < 8 || $passwordMatch == false)
-        {
-            $validate = false;
-        }
-    }
     
     if($validate == true)
     {
-
         session_start();
         $_SESSION["email"] = $row["email"];
 	$_SESSION["id"] = $row["profile_id"];
