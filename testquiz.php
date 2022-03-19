@@ -75,7 +75,7 @@ if (!empty($_POST)){
     {
    //     $message = $message . "Question " . $loop . "was not correct!" . "\n";
     }
-  
+  }
 $totalscore = $correctanswer / 10;
 if ($correctanswer >= 6)
 {
