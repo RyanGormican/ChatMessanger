@@ -52,12 +52,13 @@ signupelementwrong[1] = false;
 var photo = document.getElementById("picture").value;
 var dotposition = photo.lastIndexOf(".")+1;
 var filetype = photo.substr(dotposition, photo.length).toLowerCase();
-if (filetype != "png"  || filetype != "jpg")
+*/
+	if (filetype != "png"  || filetype != "jpg")
 {
 signupelementwrong[2] = true;
 document.getElementById("picturebordermes").innerHTML="Need to upload either a png or a jpg";
 }
-
+*/
 if (filetype == "png" || filetype == "jpg")
 {
 signupelementwrong[2] = false;
