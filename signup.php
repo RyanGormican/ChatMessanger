@@ -18,7 +18,6 @@ if(isset($_POST["submitted"]) && $_POST["submitted"]) {
 // $error = "check error";
     $uploadOk = 0;
   }
-}
 
 
 // Check file size
