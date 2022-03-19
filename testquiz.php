@@ -66,7 +66,7 @@ if (!empty($_POST)){
   $rightquestion = $question . "win";
   $rightword = $_POST['$rightquestion'];
   $anst = "$answer" . $loop;
-    if ($anst == $rightword )
+    if ($anst == "" &&  $rightword == $_POST['$rightquestion'] )
     {
    // $message = $message . "Question " . $loop . "was correct!" . "\n";
     $correctanswer = $correctanswer++;
@@ -126,6 +126,7 @@ $count = 1;
   {
 $temp = $translateword;
     $questionid = $questionid . "win";
+$questionnumber = $questionnumber . "win";
    echo "<td>";
    echo "<input type='radio' id='$questionid' name='$questionnumber' value='$translateword'>";
   echo " " . $temp . " ";
@@ -178,6 +179,7 @@ $count = 1;
 $temp = $translateword;
   echo "<td>";
      $questionid = $questionid . "win";
+    $questionnumber = $questionnumber . "win";
    echo "<input type='radio' id='$questionid' name='$questionnumber' value='$translateword'>";
  echo " " . $temp . " ";
    echo "</td>";
