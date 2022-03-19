@@ -127,7 +127,7 @@ $count++;
     $questionid = $questionid . "win";
    echo "<td>";
    echo "<input type='radio' id='$questionid' name='$questionnumber' value='$translateword'>";
-  echo '<label for="questionid"><?php echo $temp; ?></label>';
+  echo '<label for="questionid">'$temp'</label>';
    echo "</td>";
   }
   else
@@ -139,7 +139,7 @@ $count++;
    echo "<td>";
 $temp = $row2["vocabtranslateword"];
  echo "<input type='radio' id='$questionid' name='$questionnumber' value='$temp'>";
-  echo '<label for="questionid"><?php echo $temp; ?></label>';
+  echo '<label for="questionid">'$temp'</label>';
    echo "</td>";
 }
   else if ($randomnum2 == 1)
@@ -147,7 +147,7 @@ $temp = $row2["vocabtranslateword"];
      echo "<td>";
 $temp = $row2["verbtranslateword"];
    echo "<input type='radio' id='$questionid' name='$questionnumber' value='$temp'>";
-  echo '<label for="questionid"><?php echo $temp; ?></label>';
+  echo '<label for="questionid">'$temp'</label>';
       echo "</td>";
   }
 }
@@ -177,7 +177,7 @@ $count++;
   echo "<td>";
      $questionid = $questionid . "win";
    echo "<input type='radio' id='$questionid' name='$questionnumber' value='$translateword'>";
-  echo '<label for="questionid"><?php echo $temp; ?></label>';
+  echo '<label for="questionid">'$temp'</label>';
    echo "</td>";
   }
   else
@@ -189,7 +189,7 @@ $count++;
  echo "<td>";
 $temp = $row2["vocabtranslateword"];
  echo "<input type='radio' id='$questionid' name='$questionnumber' value='$temp'>";
-  echo '<label for="questionid"><?php echo $temp; ?></label>';
+  echo '<label for="questionid">'$temp'</label>';
    echo "</td>";
 }
   else if ($randomnum2 == 1)
@@ -197,7 +197,7 @@ $temp = $row2["vocabtranslateword"];
    echo "<td>";
 	  $temp = $row2["verbtranslateword"];
    echo "<input type='radio' id='$questionid' name='$questionnumber' value='$temp'>";
-  echo '<label for="questionid"><?php echo $temp; ?></label>';
+  echo '<label for="questionid">'$temp'</label>';
    echo "</td>";
   }
 }
