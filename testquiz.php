@@ -77,7 +77,7 @@ if (!empty($_POST)){
     }
   }
 $totalscore = $correctanswer / 10;
-echo '<script type="text/javascript">alert("'.$correctanswer.'");</script>';
+//echo '<script type="text/javascript">alert("'.$correctanswer.'");</script>';
 if ($correctanswer >= 6)
 {
 //  $message = $message . "Congratulations you passed and your rank has now increased!";
