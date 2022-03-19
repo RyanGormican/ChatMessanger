@@ -77,6 +77,7 @@ echo "<td>";
 	  echo "</tr>";
 }
 }
+$db->close();
 ?>
 <tr>
     <td class = "borderelement2" colspan = "2">
