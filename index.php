@@ -1,6 +1,6 @@
 
 <?php
-/*$validate = true;
+$validate = true;
 $reg_Email = "/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/";
 $reg_Pswd = "/^(\S*)?\d+(\S*)?$/";
 
@@ -11,15 +11,13 @@ if (isset($_POST["submitted"]) && $_POST["submitted"])
     $email = trim($_POST["email"]);
     $password = trim($_POST["password"]);
     
-   // $db = new mysqli("localhost", "rdg499", "cs21520", "rdg499");
+    $db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "heroku_4db4cf2503e4bbb");
     if ($db->connect_error)
     {
         die ("Connection failed: " . $db->connect_error);
     }
 
-    //add code here to select * from table User where email = '$email' AND password = '$password'
-    // start with 
-// $q =  "SELECT * FROM Profile476 WHERE email = '$email' AND password = '$password'";
+ $q =  "SELECT * FROM Profile WHERE email = '$email' AND password = '$password'";
 
        
     $r = $db->query($q);
@@ -62,7 +60,7 @@ if (isset($_POST["submitted"]) && $_POST["submitted"])
     }
 
 }
-*/
+
 ?>
 
 <!DOCTYPE html>
@@ -83,14 +81,14 @@ if (isset($_POST["submitted"]) && $_POST["submitted"])
 <div class = "messengerWindow4">
 <h2 class = "maintitle" > <i class="fa-solid fa-globe"></i>  Jibbernet <i class="fa-solid fa-globe"></i> </h2>
 <?php
-/*
- //$db = new mysqli("localhost", "rdg499", "cs21520", "rdg499");
+
+ //$db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "heroku_4db4cf2503e4bbb");
     if ($db->connect_error)
     {
         die ("Connection failed: " . $db->connect_error);
     }
 
-*/
+
 ?>
 <body class = "background">
 <form id= "login" method ="post">
