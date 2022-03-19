@@ -116,20 +116,20 @@ echo "<td>";
   echo "</td>";
   echo "</tr>";
 echo "<tr class = 'borderelement2'>";
-  $q2 = "SELECT DISTINCT Vocab.vocabtranslateword,  Verbs.verbtranslateword FROM Vocab, Verbs WHERE Vocab.vocabtag LIKE '%$languagedif%' AND Verbs.verbtag LIKE '%$languagedif%' AND Vocab.vocabtranslateword <> '$translateword' AND Verbs.verbtranslateword <> '$translateword' ORDER BY RAND() LIMIT '$otheranswers'";
+  $q2 = "SELECT DISTINCT Vocab.vocabtranslateword,  Verbs.verbtranslateword FROM Vocab, Verbs WHERE Vocab.vocabtag LIKE '%$languagedif%' AND Verbs.verbtag LIKE '%$languagedif%' AND Vocab.vocabtranslateword <> '$translateword' AND Verbs.verbtranslateword <> '$translateword' ORDER BY RAND() LIMIT 5";
 $result2 = mysqli_query($db,$q1);
 $count = 1;
   while($row2 = mysqli_fetch_assoc($result2)) {
 {
   if ($count == $position)
   {
-$count++;
 $temp = $translateword;
     $questionid = $questionid . "win";
    echo "<td>";
    echo "<input type='radio' id='$questionid' name='$questionnumber' value='$translateword'>";
   echo " " . $temp . " ";
    echo "</td>";
+$count++;
   }
   else
   {
@@ -167,7 +167,7 @@ echo "<td>";
   echo "</td>";
   echo "</tr>";
 echo "<tr class = 'borderelement2'>";
-  $q2 = "SELECT DISTINCT Vocab.vocabtranslateword,  Verbs.verbtranslateword FROM Vocab, Verbs WHERE Vocab.vocabtag LIKE '%$languagedif%' AND Verbs.verbtag LIKE '%$languagedif%' AND Vocab.vocabtranslateword <> '$translateword' AND Verbs.verbtranslateword <> '$translateword' ORDER BY RAND() LIMIT '$otheranswers'";
+  $q2 = "SELECT DISTINCT Vocab.vocabtranslateword,  Verbs.verbtranslateword FROM Vocab, Verbs WHERE Vocab.vocabtag LIKE '%$languagedif%' AND Verbs.verbtag LIKE '%$languagedif%' AND Vocab.vocabtranslateword <> '$translateword' AND Verbs.verbtranslateword <> '$translateword' ORDER BY RAND() LIMIT 5";
 $result2 = mysqli_query($db,$q1);
 $count = 1;
   while($row2 = mysqli_fetch_assoc($result2)) {
@@ -175,12 +175,12 @@ $count = 1;
   if ($count == $position)
   {
 $temp = $translateword;
-$count++;
   echo "<td>";
      $questionid = $questionid . "win";
    echo "<input type='radio' id='$questionid' name='$questionnumber' value='$translateword'>";
  echo " " . $temp . " ";
    echo "</td>";
+$count++;
   }
   else
   {
