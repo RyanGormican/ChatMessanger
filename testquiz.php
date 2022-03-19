@@ -66,7 +66,7 @@ if (!empty($_POST)){
   $rightquestion = " ". $question . "win";
   $rightword = $_POST[$rightquestion];
   $anst = $_POST[$loop];
-    if ($anst == "" &&  $rightword != "" )
+    if ( $rightword != "" )
     {
    // $message = $message . "Question " . $loop . "was correct!" . "\n";
     $correctanswer = $correctanswer++;
