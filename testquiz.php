@@ -35,7 +35,7 @@ header("Location: index.php");
       </title>
   </head>
 <body class = "background">
-  <form action = "testoverview.php" method= "post">
+  <form action = "testquiz.php" method= "post">
 <div class = "messengerWindowsignup"> 
 <h2> <i class="fa-solid fa-book-atlas"></i></h2>
 <input type="hidden" name="submitted" value="1"/>
@@ -70,14 +70,12 @@ if (!empty($_POST)){
     {
    // $message = $message . "Question " . $loop . "was correct!" . "\n";
     $correctanswer = $correctanswer++;
-console.log("PASS");
     }
     else
     {
-	 console.log("FAIL");
    //     $message = $message . "Question " . $loop . "was not correct!" . "\n";
     }
-  }
+  
 $totalscore = $correctanswer / 10;
 if ($correctanswer >= 6)
 {
