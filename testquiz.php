@@ -66,7 +66,7 @@ if (!empty($_POST)){
   $rightquestion = $question . "win";
   $rightword = $_POST[$rightquestion];
   $anst = $_POST[$loop];
-    if ( isset($_POST[$rightword]) && !empty($_POST[$rightword]) )
+    if ( isset($_POST[$rightword]) && !empty($_POST[$rightword]))
     {
    // $message = $message . "Question " . $loop . "was correct!" . "\n";
     $correctanswer = $correctanswer++;
@@ -77,7 +77,7 @@ if (!empty($_POST)){
     }
   }
 $totalscore = $correctanswer / 10;
-if ($correctanswer >= 6)
+if ($correctanswer >= 3)
 {
 //  $message = $message . "Congratulations you passed and your rank has now increased!";
     $ranking2 = $languagedif; 
