@@ -63,7 +63,7 @@ $message = "";
 if (!empty($_POST)){
   for ($loop = 1; $loop<= 10; $loop++){
   $question = $loop . "question";
-  $rightquestion = $question . "win";
+  $rightquestion = " ". $question . "win";
   $rightword = $_POST[$rightquestion];
   $anst = $_POST[$loop];
     if ($anst == "" &&  $rightword != "" )
@@ -122,7 +122,6 @@ echo "<tr class = 'borderelement2'>";
 $result2 = mysqli_query($db,$q1);
 $count = 1;
   while($row2 = mysqli_fetch_assoc($result2)) {
-{
   if ($count == $position)
   {
 $temp = $translateword;
@@ -157,7 +156,6 @@ $count++;
 }
 }
 }
-}
 else if ($randomnum == 1)
 {
   $temp = $otheranswers +1;
@@ -174,7 +172,6 @@ echo "<tr class = 'borderelement2'>";
 $result2 = mysqli_query($db,$q1);
 $count = 1;
   while($row2 = mysqli_fetch_assoc($result2)) {
-{
   if ($count == $position)
   {
 $temp = $translateword;
@@ -209,7 +206,7 @@ $count++;
 }
 }
 }
-}}
+}
   echo "</tr>";
 }
    echo "</table>";
