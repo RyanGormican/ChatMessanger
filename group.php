@@ -15,7 +15,6 @@ $db->close();
 $name = $_GET['b'];
 $room = $_GET['a'];
  }
-  }
 else
 {
 header("Location: index.php");
