@@ -82,9 +82,9 @@ if ($correctanswer >= 6)
 {
 //  $message = $message . "Congratulations you passed and your rank has now increased!";
     $ranking2 = $languagedif; 
-    $q10 = "UPDATE RANKS SET rankid= '$ranking2' WHERE id = '$id' AND ranklanguage = '$languagename'";
+    $q10 = "UPDATE RANKS SET rankid= '$ranking2' WHERE profile_id = '$id' AND ranklanguage = '$languagename'";
+     $updatequery = mysqli_query($db,$q10);
 echo "<script>alert('Congratulations you passed and your rank has now increased!);window.location.href='testoverview.php;</script>";
-    $updatequery = mysqli_query($db,$q10);
     }
 else
 {
