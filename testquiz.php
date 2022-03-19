@@ -20,7 +20,7 @@ $languagedif = $_SESSION['info2'];
   }
 else
 {
-//header("Location: index.php");
+header("Location: index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -30,13 +30,12 @@ else
     <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" type = "text/css" href="project.css">
 <script src="https://kit.fontawesome.com/cb59c9bd28.js" crossorigin="anonymous"></script>
-<script src='signup.js'></script>
     <title>
     Test 
       </title>
   </head>
 <body class = "background">
-  <form action = "testquiz.php"> method= "post">
+  <form action = "testquiz.php" method= "post">
 <div class = "messengerWindowsignup"> 
 <h2> <i class="fa-solid fa-book-atlas"></i></h2>
 <input type="hidden" name="submitted" value="1"/>
