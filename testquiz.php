@@ -68,12 +68,11 @@ if (!empty($_POST)){
   $anst = $_POST[$loop];
     if ( isset($_POST[$anst]) && !empty($_POST[$anst]))
     {
-	      $correctanswer = $correctanswer++;
    // $message = $message . "Question " . $loop . "was correct!" . "\n";
     }
     else
     {
-
+  $correctanswer++;
    //     $message = $message . "Question " . $loop . "was not correct!" . "\n";
     }
   }
@@ -133,7 +132,7 @@ $questionnumber2 = $questionnumbered . "win";
    echo "<input type='radio' id='$questionid' name=' $questionnumber2' value='$translateword'>";
   echo " " . $temp . " ";
    echo "</td>";
-$count = $count++;
+$count++;
   }
   else
   {
