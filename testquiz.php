@@ -97,10 +97,11 @@ $q1 = "SELECT DISTINCT Vocab.vocabword, Vocab.vocabtranslateword, Verbs.verbword
 $result = mysqli_query($db,$q1);
    
 echo "<table class = 'messengerWindow2'>";
-$questionnumber = 0;
+$questionnumbered = 0;
  while($row = mysqli_fetch_assoc($result)) {
 {
-  $questionnumber++;
+ $questionnumbered++;
+  $questionnumber = $questionnumbered;
   $questionid = $questionnumber . "question";
   $num = substr($languagedif, -1);
 $otheranswers = 5;
@@ -128,7 +129,7 @@ $temp = $translateword;
     $questionid = $questionid . "win";
 $questionnumber = $questionnumber . "win";
    echo "<td>";
-   echo "<input type='radio' id='$questionid' name='$questionnumber' value='$translateword'>";
+   echo "<input type='radio' id='$questionid' name=' $questionnumbered' value='$translateword'>";
   echo " " . $temp . " ";
    echo "</td>";
 $count++;
@@ -141,7 +142,7 @@ $count++;
 {
    echo "<td>";
 $temp = $row2["vocabtranslateword"];
- echo "<input type='radio' id='$questionid' name='$questionnumber' value='$temp'>";
+ echo "<input type='radio' id='$questionid' name='$questionnumbered' value='$temp'>";
  echo " " . $temp . " ";
    echo "</td>";
 }
@@ -149,7 +150,7 @@ $temp = $row2["vocabtranslateword"];
   {
      echo "<td>";
 $temp = $row2["verbtranslateword"];
-   echo "<input type='radio' id='$questionid' name='$questionnumber' value='$temp'>";
+   echo "<input type='radio' id='$questionid' name='$questionnumbered' value='$temp'>";
   echo " " . $temp . " ";
       echo "</td>";
   }
@@ -180,7 +181,7 @@ $temp = $translateword;
   echo "<td>";
      $questionid = $questionid . "win";
     $questionnumber = $questionnumber . "win";
-   echo "<input type='radio' id='$questionid' name='$questionnumber' value='$translateword'>";
+   echo "<input type='radio' id='$questionid' name='$questionnumbered' value='$translateword'>";
  echo " " . $temp . " ";
    echo "</td>";
 $count++;
@@ -193,7 +194,7 @@ $count++;
 {
  echo "<td>";
 $temp = $row2["vocabtranslateword"];
- echo "<input type='radio' id='$questionid' name='$questionnumber' value='$temp'>";
+ echo "<input type='radio' id='$questionid' name='$questionnumbered' value='$temp'>";
  echo " " . $temp . " ";
    echo "</td>";
 }
@@ -201,7 +202,7 @@ $temp = $row2["vocabtranslateword"];
   {
    echo "<td>";
 	  $temp = $row2["verbtranslateword"];
-   echo "<input type='radio' id='$questionid' name='$questionnumber' value='$temp'>";
+   echo "<input type='radio' id='$questionid' name='$questionnumbered' value='$temp'>";
  echo " " . $temp . " ";
    echo "</td>";
   }
