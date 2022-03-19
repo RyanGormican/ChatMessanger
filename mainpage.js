@@ -22,7 +22,6 @@ var t = i + 1;
 var m = t + "tag";
           var json_result = results[i];
 }
-}
        
 }
 }
