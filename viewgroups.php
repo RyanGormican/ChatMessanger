@@ -66,8 +66,8 @@ echo $rankt;
 $q1 = "SELECT  Groups.groupname,Groups.group_id, Groups.groupdescription, Groups.ranktag FROM Groups  WHERE Groups.ranktag LIKE '%$rankt%'";
 $result = mysqli_query($db,$q1);
  while($row = mysqli_fetch_assoc($result)) {   
-$groupN = $result['groupname'];
-$groupD= $result['groupdescription'];
+$groupN = $row['groupname'];
+$groupD= $row['groupdescription'];
 echo "<tr class = 'borderelement2'>";
 echo "<td>";
 	  echo "<a href='group.php?a=$group_id' > $groupN </a>" ;
