@@ -68,7 +68,7 @@ if (isset($_POST["submitted"]) && $_POST["submitted"])
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-<link rel="stylesheet" type = "text/css" href="assignment.css">
+<link rel="stylesheet" type = "text/css" href="project.css">
 <script src="https://kit.fontawesome.com/cb59c9bd28.js" crossorigin="anonymous"></script>
 <script src='mainpage.js'></script>
     <title>
