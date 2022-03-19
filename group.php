@@ -12,6 +12,7 @@ $db->close();
  if(isset($_GET['a']) ){
     $_SESSION['info']=$_GET['a'];
  }
+$room = $_GET['a'];
  }
   }
 else
