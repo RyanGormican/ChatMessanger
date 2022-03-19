@@ -67,9 +67,10 @@ $result = mysqli_query($db,$q1);
  while($row = mysqli_fetch_assoc($result)) {   
 $groupN = $row['groupname'];
 $groupD= $row['groupdescription'];
+$groupI = $row['group_id'];
 echo "<tr class = 'borderelement2'>";
 echo "<td>";
-	  echo "<a href='group.php?a=$group_id' > $groupN </a>" ;
+	  echo "<a href='group.php?a=$groupI > $groupN </a>" ;
 	  echo "</td>";
 	  echo "<td>";
 	  echo $groupD;
