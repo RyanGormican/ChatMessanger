@@ -78,9 +78,12 @@ for ($i = 1; $i<5; $i++)
   {
     $dif = "Scholar";
   }
+if ($num > $i)
+{
 $tag = $i;
 $cooltag = $coolid . $tag;
             echo "<a href='testquiz.php?a=$coolname&b=$cooltag' >  $dif   </a>";
+}
 	echo "</td>";
 }
   echo "</tr>";
