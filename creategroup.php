@@ -23,9 +23,8 @@ header("Location: index.php");
    <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-<link rel="stylesheet" type = "text/css" href="assignment.css">
+<link rel="stylesheet" type = "text/css" href="project.css">
 <script src="https://kit.fontawesome.com/cb59c9bd28.js" crossorigin="anonymous"></script>
-<script src='signup.js'></script>
     <title>
      Create a group
       </title>
@@ -36,6 +35,99 @@ header("Location: index.php");
 <form id = "creategroup" action="creategroup.php" method = "post" enctype="multipart/form-data">
 <input type="hidden" name="submitted" value="1"/>
   <table class = "messengerWindow2">
+<?php
+	  if (!empty($_POST)){
+$nameT=  $_POST['name'];
+$description = $_POST['descriptiion'];
+$tempG =  $_POST['language'];
+if ($tempG == "English")
+{
+$tempD = $_POST['profiencyto'];
+if ($tempD == "Beginner");
+	{
+$GTag = "ENG0ENG1ENG2ENG3ENG4";
+	}
+if ($tempD == "Intermediate");
+	{
+$GTag = "ENG1ENG2ENG3ENG4";
+	}
+if ($tempD == "Novice");
+	{
+$GTag = "ENG2ENG3ENG4";
+	}
+if ($tempD == "Expert");
+	{
+$GTag = "ENG3ENG4";
+	}
+if ($tempD == "Scholar");
+	{
+$GTag = "ENG4";
+	}
+}
+else if ($tempG == "French")
+{
+$tempD = $_POST['profiencyto'];
+if ($tempD == "Beginner");
+	{
+$GTag = "FRE0FRE1FRE2FRE3FRE4";
+	}
+if ($tempD == "Intermediate");
+	{
+$GTag = "FRE1FRE2FRE3FRE4";
+	}
+if ($tempD == "Novice");
+	{
+$GTag = "FRE2FRE3FRE4";
+	}
+if ($tempD == "Expert");
+	{
+$GTag = "FRE3FRE4";
+	}
+if ($tempD == "Scholar");
+	{
+$GTag = "FRE4";
+	}
+}
+else if ($tempG = "German")
+{
+$tempD = $_POST['profiencyto'];
+if ($tempD == "Beginner");
+	{
+$GTag = "GER0GER1GER2GER3GER4";
+	}
+if ($tempD == "Intermediate");
+	{
+$GTag = "GER1GER2GER3GER4";
+	}
+if ($tempD == "Novice");
+	{
+$GTag = "GER2GER3GER4";
+	}
+if ($tempD == "Expert");
+	{
+$GTag = "GER3GER4";
+	}
+if ($tempD == "Scholar");
+	{
+$GTag = "GER4";
+	}
+}
+      $q3 ="INSERT INTO Groups (groupname, ranktag, groupdescription) VALUES ('$nameT','$description','$GTag')";
+        $r3 = $db->query($q3);
+	  }
+        if ($r3 === true)
+        {	
+	$error = "going";
+            header("Location: viewgroups.php");
+            $db->close();
+            exit();
+        }
+    }
+    else
+    {
+        $db->close();
+    }
+?>
 <tr>
 <td colspan = "2">
  <?php echo $error;?>
@@ -77,15 +169,7 @@ header("Location: index.php");
     </td>
     <td class = "borderelement2" id = "profiencyborder">
 <label class = "a"  id = "profiencybordermes"></label>
-   <select name="profiencyfrom" >
-  <option value="Empty"></option>
-  <option value="Beginner">Beginner</option>
-  <option value="Intermediate">Intermediate</option>
-  <option value="Novice">Novice</option>
-  <option value="Expert">Expert</option>
-  <option value="Scholar">Scholar</option>
-</select>
-to 
+
    <select name="profiencyto" >
   <option value="Empty"></option>
   <option value="Beginner">Beginner</option>
