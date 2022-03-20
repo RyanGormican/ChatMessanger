@@ -63,10 +63,7 @@ mysqli_close($link);
 *{
     box-sizing:border-box;
 }
-body{
-    background-color:#abd9e9;
-    font-family:Arial;
-}
+
 #container{
     width:500px;
     height:700px;
