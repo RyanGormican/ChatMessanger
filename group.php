@@ -55,7 +55,7 @@ mysqli_close($link);
 <head>
    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-<link rel="stylesheet" type = "text/css" href="assignment.css">
+<link rel="stylesheet" type = "text/css" href="project.css">
 <script src="https://kit.fontawesome.com/cb59c9bd28.js" crossorigin="anonymous"></script>
 <body class = "background">
 <style>
@@ -79,13 +79,11 @@ mysqli_close($link);
 <div id="container">
     <main>
         <header>
-            <img src="https://s3-us-west-2.amazonaws.com/
-             s.cdpn.io/1940306/ico_star.png" alt="">
+           
             <div>
-                <h2>GROUP CHAT</h2>
+                <h2><?php echo $name; ?> </h2>
             </div>
-            <img src="https://s3-us-west-2.amazonaws.com/
-            s.cdpn.io/1940306/ico_star.png" alt="">
+        
         </header>
  
 <script>
