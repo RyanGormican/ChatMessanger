@@ -63,27 +63,18 @@ mysqli_close($link);
     box-sizing:border-box;
 }
 
-#container{
-    width:500px;
-    height:700px;
-    background:gold;
-    margin:0 auto;
-    font-size:0;
-    border-radius:5px;
-    overflow:hidden;
-}
+
  
 </style>
 <body onload="show_func()">
-<div id="container">
+<div class ="messengerWindow2">
     <main>
-        <header>
-           
-            <div>
+     
+          
+            
                 <h2><?php echo $name; ?> </h2>
-            </div>
         
-        </header>
+      
  
 <script>
 function show_func(){
@@ -172,11 +163,11 @@ endwhile;
         <tr>
            <th>
             <input  class="input1" type="text"
-                    id="uname" name="uname"
+                    id="profilename" name="profilename"
                     placeholder="From">
            </th>
            <th>
-            <textarea id="msg" name="msg"
+            <textarea id="text" name="text"
                 rows='3' cols='50'
                 placeholder="Type your message">
             </textarea></th>
