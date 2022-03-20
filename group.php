@@ -429,7 +429,7 @@ class chattersInstance
 		}
 	}
 
-	function get_user_all_data()
+	function fetch_chatter()
 	{
 		$query = "
 		SELECT * FROM chat_user_table 
@@ -478,8 +478,8 @@ class chattersInstance
 $group_room = new groupInstance; 
 $group_chatters = new chattersInstance;
 $groupmes = $grouproom->fetch_groupmessages();
-$chattermes = $group_chatters->fetch_chatmessages(); 
-foreach($groupmes as $group
+$chattermes = $group_chatters->fetch_chatter(); 
+foreach($groupmes as $group)
 {
 if(isset($_SESSION['id']))
 {
