@@ -306,7 +306,6 @@ else
 endwhile;
 ?>
 </div>
-    <footer>
         <table>
         <tr>
            <td>
@@ -321,7 +320,6 @@ endwhile;
            </td>               
         </tr>
         </table>               
-    </footer>
 </form>
 </main>   
 </div>
