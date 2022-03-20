@@ -60,7 +60,15 @@ mysqli_close($db);
 *{
     box-sizing:border-box;
 }
-
+#container{
+    width:500px;
+    height:700px;
+    background:white;
+    margin:0 auto;
+    font-size:0;
+    border-radius:5px;
+    overflow:hidden;
+}
 main .message{
     padding:10px;
     color: gold;
@@ -209,7 +217,7 @@ main footer textarea::placeholder{
  
 </style>
 <body onload="show_func()">
-<div class ="messengerWindowsignup">
+<div id="container">
     <main>
                 <h2>Chat Room </h2>
 <script>
