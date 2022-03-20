@@ -21,7 +21,16 @@ else
 header("Location: index.php");
 }
 ?>
-
+<?php
+class Database
+{
+	function addconnection()
+	{
+		$database = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "heroku_4db4cf2503e4bbb");
+		return $database;
+	}
+}
+?>
 <?php 
 class groupInstance
 {
@@ -73,16 +82,16 @@ class groupInstance
 
 	public function __construct()
 	{
-		$database_object = new Database_connection;
-		$this->connect = $database_object->connect();
+		$database_object = new Database;
+		$this->addconnection = $database_object->addconnection();
 	}
 
 	function save_chat()
 	{
 		$query = "
-		INSERT INTO chatrooms 
-			(userid, msg, created_on) 
-			VALUES (:userid, :msg, :created_on)
+		INSERT INTO GroupMessage
+			(profileid, text, created_on) 
+			VALUES (:profileid, :text, :created_on)
 		";
 
 		$statement = $this->connect->prepare($query);
@@ -100,7 +109,7 @@ class groupInstance
 	{
 		$q1 = "SELECT * FROM GroupMessage WHERE GroupMessage.groupid = '$room'";
 
-		$results = $this->connect->prepare($query);
+		$results = $this->addconnection->prepare($query);
 		$results->execute();
 		return $statement->fetchAll(PDO::FETCH_ASSOC);
 	}
@@ -124,8 +133,8 @@ class chattersInstance
 
 	public function __construct()
 	{
-		$database_object = new Database_connection;
-		$this->connect = $database_object->connect();
+		$database_object = new Database;
+		$this->addconnection = $database_object->addconnection();
 	}
 
 	function setUserId($user_id)
@@ -409,7 +418,7 @@ class chattersInstance
 		SELECT * FROM Profile WHERE profile_id = '$id'  
 		";
 
-		$statement = $this->connect->prepare($query);
+		$statement = $this->addconnection->prepare($query);
 
 		$statement->execute();
 
