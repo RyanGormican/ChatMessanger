@@ -243,11 +243,9 @@ $q1 = "SELECT * FROM messages WHERE messages.groupedid = '$room'";
  $run = $db->query($q1);
  $i=0;
   
- while($row = $run->fetch_array()) :
- if($i==0){
- $i=5;
- $first=$row;
- ?>
+ while($row = $run->fetch_array()) {
+if ($row['profilename']==$named)
+{
  <div id="triangle1" class="triangle1"></div>
  <div id="message1" class="message1">
  <span style="color:white;float:right;">
@@ -262,10 +260,8 @@ $q1 = "SELECT * FROM messages WHERE messages.groupedid = '$room'";
 </div>
 <br/><br/>
  <?php
- }
-else
-{
-if($row['profilename']!=$named)
+}
+else if($row['profilename']!=$named)
 {
 ?>
  <div id="triangle" class="triangle"></div>
@@ -278,25 +274,6 @@ if($row['profilename']!=$named)
           font-size:10px;clear:both;">
   <?php echo $row['profilename']; ?>,
         <?php echo $row['time']; ?>
- </span>
-</div>
-</div>
-<br/><br/>
-<?php
-}
-else
-{
-?>
- <div id="triangle1" class="triangle1"></div>
- <div id="message1" class="message1">
- <span style="color:white;float:right;">
-  <?php echo $row['text']; ?>
- </span> <br/>
- <div>
- <span style="color:black;float:left;
-         font-size:10px;clear:both;">
- <?php echo $row['profilename']; ?>,
-      <?php echo $row['time']; ?>
  </span>
 </div>
 </div>
