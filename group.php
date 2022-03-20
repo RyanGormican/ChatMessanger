@@ -239,52 +239,32 @@ $db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "h
  
 $q1 = "SELECT * FROM messages WHERE messages.groupedid = '$room'";
  $run = $db->query($q1);
- while($row = $run->fetch_array()) {
-if ($row['profilename']==$named)
-{
- <div id="triangle1" class="triangle1"></div>
- <div id="message1" class="message1">
- <span style="color:white;float:right;">
- <?php echo $row['text']; ?></span> <br/>
- <div>
-   <span style="color:black;float:left;
-   font-size:10px;clear:both;">
-    <?php echo $row['profilename']; ?>,
-        <?php echo $row['time']; ?>
-   </span>
-</div>
-</div>
-<br/><br/>
- <?php
-}
-else if($row['profilename']!=$named)
-{
-?>
- <div id="triangle" class="triangle"></div>
- <div id="message" class="message">
- <span style="color:white;float:left;">
-   <?php echo $row['Text']; ?>
- </span> <br/>
- <div>
-  <span style="color:black;float:right;
-          font-size:10px;clear:both;">
-  <?php echo $row['profilename']; ?>,
-        <?php echo $row['time']; ?>
- </span>
-</div>
-</div>
-<br/><br/>
-<?php
-}
-}
-endwhile;
-?>
+ while($row = mysqli_fetch_assoc($run)) {
+echo"<div id='message1' class='message1'>";
+ echo"<span style='color:white;float:right;'>";
+ echo $row['text']; 
+ echo " </span>";
+ echo "<br/>";
+ echo "<div>";
+ echo "<span style='color:black;float:left;
+   font-size:10px;clear:both;'>";
+ echo $row['profilename']; 
+  echo $row['time'];
+  echo "</span>";
+echo "</div>";
+echo "</div>";
+echo "<br/>";
+echo "<br/>";
+ }
+	?>
+
+
 </div>
         <table>
         <tr>
            <td>
             <textarea id="text" name="text"
-                rows='3' cols='50'
+                rows='4' cols='75'
                 placeholder="Type your message">
             </textarea>
 	</td>
