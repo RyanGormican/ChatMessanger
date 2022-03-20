@@ -242,14 +242,14 @@ $q1 = "SELECT messages.text,messages.profilename, messages.time, FROM messages W
  while($row = mysqli_fetch_assoc($run)) {
 echo"<div id='message1' class='message1'>";
  echo"<span style='color:white;float:right;'>";
- echo $row['text']; 
+ echo "$row['text']"; 
  echo " </span>";
  echo "<br/>";
  echo "<div>";
  echo "<span style='color:black;float:left;
    font-size:10px;clear:both;'>";
- echo $row['profilename']; 
-  echo $row['time'];
+ echo "$row['profilename']"; 
+  echo "$row['time']";
   echo "</span>";
 echo "</div>";
 echo "</div>";
