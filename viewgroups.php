@@ -78,13 +78,22 @@ echo "<td colspan = '2'>";
 	  echo "</tr>";
 }
 }
-$db->close();
+$q2 =  "SELECT Profile.type FROM Profile WHERE Profile.profile_id = '$id'";  
+$resultT = mysqli_query($db,$q2);
+$rowT = $resultT->fetch_assoc();
+$_SESSION["type"] = $rowT["type"];
+$typid = $_SESSION['type'];
+if ($typid = "moderator")
+{
+echo "<tr>";
+ echo "<td class = "borderelement2" colspan = "2">":
+   echo "<a href="creategroup.php" > <i class="fa-solid fa-user-group"></i> Create  </a>";
+  echo" </td>";
+echo "</tr>";
+	}
+	$db->close();
 ?>
-<tr>
-    <td class = "borderelement2" colspan = "2">
-    <a href="creategroup.php" > <i class="fa-solid fa-user-group"></i> Create  </a>
-  </td>
-</tr>
+
 
     </table>
   <h2 class = "profileBorder"> 
