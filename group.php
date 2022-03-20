@@ -37,7 +37,7 @@ $message = mysqli_real_escape_string(
 date_default_timezone_set('America/Regina');
 $theTime=date('y-m-d h:ia');
 
-$q1 = "INSERT INTO messenges (profilename, time,text,groupedid) VALUES ('$named', '$theTime', '$message', '$room')";
+$q1 = "INSERT INTO messages (profilename, time,text,groupedid) VALUES ('$named', '$theTime', '$message', '$room')";
 if(mysqli_query($db, $q1)){
 } 
 else{
@@ -241,11 +241,11 @@ $q1 = "SELECT * FROM messages WHERE messages.groupedid = '$room'";
  $run = $db->query($q1);
  while($row = mysqli_fetch_assoc($run)) {
 echo"<div id='message1' class='message1'>";
- echo $row['text']; 
+ echo $row['Text']; 
  echo "<br/>";
  echo "<div>";
  echo $row['profilename']; 
-  echo $row['time'];
+  echo $row['Time'];
 echo "</div>";
 echo "</div>";
 echo "<br/>";
