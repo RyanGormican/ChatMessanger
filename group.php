@@ -446,6 +446,15 @@ class chattersInstance
     <script type="text/javascript" src="vendor-front/parsley/dist/parsley.min.js"></script>
     <link href="vendor-front/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="project.css"/>
+	<style type="text/css">
+		#messages_area
+		{
+			height: 500px;
+			overflow-y: auto;
+			background-color:#e6e6e6;
+		}
+
+	</style>
 </head>
 <body class = "background">
 <div class = "messengerWindowsignup"> 
@@ -558,7 +567,7 @@ echo '	<div class="'.$row_class.'"><div class="col-sm-10"><div class="shadow-sm 
 			}
 		});
 	});
-	}
+	};
 </script>
 </html>
 
