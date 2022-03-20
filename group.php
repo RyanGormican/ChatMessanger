@@ -71,7 +71,6 @@ mysqli_close($db);
        color: gold;
     font-family: "Helvetica";
 }
-}
 main .message{
     padding:10px;
     color: gold;
@@ -212,7 +211,6 @@ main footer .input2{
     background-color:black;
     border: 2px solid white; 
 }
-}
 main footer textarea::placeholder{
     color:#ddd;
 }
@@ -241,8 +239,6 @@ $db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "h
  
 $q1 = "SELECT * FROM messages WHERE messages.groupedid = '$room'";
  $run = $db->query($q1);
- $i=0;
-  
  while($row = $run->fetch_array()) {
 if ($row['profilename']==$named)
 {
