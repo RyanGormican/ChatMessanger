@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION["email"]) && $_SESSION["type" == "moderator")
+if(isset($_SESSION["email"]) && $_SESSION["type"] == "moderator")
 	{
  $db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "heroku_4db4cf2503e4bbb");
     if ($db->connect_error)
@@ -95,16 +95,6 @@ to
   <option value="Scholar">Scholar</option>
 </select>
 </td>
-</tr>
-<tr>
-    <td class = "borderelement2">
-   Public or Private?
-  </td>
- <td class = "borderelement2" id = "statusborder">
-<label class = "a" id = "statusbordermes"></label>
-<label class = "a" for "public">Public</label> <input type="radio" id="public" name="status" value="public">
-<label class = "a" for "private">Private</label> <input type="radio" id="private" name="status" value="private">
-</td> 
 </tr>
 
     </table>
