@@ -38,10 +38,8 @@ $m = mysqli_real_escape_string(
       $link, $_REQUEST['msg']);
 date_default_timezone_set('America/Regina');
 $ts=date('y-m-d h:ia');
-  
-// Attempt insert query execution
-$sql = "INSERT INTO chats (uname, msg, dt)
-        VALUES ('$un', '$m', '$ts')";
+
+$sql = "INSERT INTO messenges (uname, msg, dt) VALUES ('$un', '$m', '$ts')";
 if(mysqli_query($link, $sql)){
     ;
 } else{
@@ -67,7 +65,7 @@ mysqli_close($link);
 #container{
     width:500px;
     height:700px;
-    background:white;
+    background:gold;
     margin:0 auto;
     font-size:0;
     border-radius:5px;
@@ -100,7 +98,7 @@ function show_func(){
 <?php
 $db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "heroku_4db4cf2503e4bbb");
  
-$query = "SELECT * FROM chats";
+$query = "SELECT * FROM messenges";
  $run = $db->query($query);
  $i=0;
   
