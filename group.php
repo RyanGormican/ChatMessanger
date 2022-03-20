@@ -13,7 +13,7 @@ $db->close();
  if(isset($_GET['a']) ){
     $_SESSION['info']=$_GET['a'];
  }
-$name = $_GET['b'];
+//$name = $_GET['b'];
 $room = $_GET['a'];
  }
 else
@@ -23,22 +23,22 @@ header("Location: index.php");
 ?>
 
 <?php 
-class group_Instance
+class groupInstance
 {
-	private $chat_id;
+	private $group_id;
 	private $user_id;
 	private $message;
 	private $created_on;
 	protected $connect;
 
-	public function setChatId($chat_id)
+	public function setChatId($group_id)
 	{
-		$this->chat_id = $chat_id;
+		$this->group_id = $group_id;
 	}
 
 	function getChatId()
 	{
-		return $this->chat_id;
+		return $this->group_id;
 	}
 
 	function setUserId($user_id)
@@ -99,12 +99,9 @@ class group_Instance
 		$statement->execute();
 	}
 
-	function get_all_chat_data()
+	function fetch_groupmessages()
 	{
-		$q1 = "SELECT * FROM chatrooms 
-			INNER JOIN chat_user_table 
-			ON chat_user_table.user_id = chatrooms.userid 
-			ORDER BY chatrooms.id ASC
+		$q1 = "SELECT * FROM GroupMessage WHERE GroupMessage.groupid = '$room'";
 		";
 
 		$results = $this->connect->prepare($query);
@@ -228,23 +225,7 @@ class chattersInstance
 		return $this->user_login_status;
 	}
 
-	function make_avatar($character)
-	{
-	    $path = "images/". time() . ".png";
-		$image = imagecreate(200, 200);
-		$red = rand(0, 255);
-		$green = rand(0, 255);
-		$blue = rand(0, 255);
-	    imagecolorallocate($image, $red, $green, $blue);  
-	    $textcolor = imagecolorallocate($image, 255,255,255);
 
-	    $font = dirname(__FILE__) . '/font/arial.ttf';
-
-	    imagettftext($image, 100, 0, 55, 150, $textcolor, $font, $character);
-	    imagepng($image, $path);
-	    imagedestroy($image);
-	    return $path;
-	}
 
 	function get_user_data_by_email()
 	{
@@ -432,7 +413,7 @@ class chattersInstance
 	function fetch_chatter()
 	{
 		$query = "
-		SELECT * FROM chat_user_table 
+		SELECT * FROM Profile WHERE profile_id = '$id'  
 		";
 
 		$statement = $this->connect->prepare($query);
@@ -477,7 +458,7 @@ class chattersInstance
 <?php
 $group_room = new groupInstance; 
 $group_chatters = new chattersInstance;
-$groupmes = $grouproom->fetch_groupmessages();
+$groupmes = $group_room->fetch_groupmessages();
 $chattermes = $group_chatters->fetch_chatter(); 
 foreach($groupmes as $group)
 {
@@ -487,12 +468,12 @@ $fromuser='$id';
 $row_class = 'row justify-content-start';
 $background_class = 'text-dark alert-light';
 }
-	else
-						{
-							$from = $chat['user_name'];
-							$row_class = 'row justify-content-end';
-							$background_class = 'alert-success';
-						}
+else
+{
+$from = $group['user_name'];
+$row_class = 'row justify-content-end';
+$background_class = 'alert-success';
+}
 
 						echo '
 						<div class="'.$row_class.'">
