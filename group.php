@@ -32,8 +32,6 @@ $db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "h
         die ("Connection failed: " . $db->connect_error);
     }
   
-$named= mysqli_real_escape_string(
-      $link, $_REQUEST['profilename']);
 $message = mysqli_real_escape_string(
       $link, $_REQUEST['text']);
 date_default_timezone_set('America/Regina');
@@ -161,11 +159,6 @@ endwhile;
     <footer>
         <table>
         <tr>
-           <th>
-            <input  class="input1" type="text"
-                    id="profilename" name="profilename"
-                    placeholder="From">
-           </th>
            <th>
             <textarea id="text" name="text"
                 rows='3' cols='50'
