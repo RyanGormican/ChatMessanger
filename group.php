@@ -102,7 +102,6 @@ class groupInstance
 	function fetch_groupmessages()
 	{
 		$q1 = "SELECT * FROM GroupMessage WHERE GroupMessage.groupid = '$room'";
-		";
 
 		$results = $this->connect->prepare($query);
 		$results->execute();
