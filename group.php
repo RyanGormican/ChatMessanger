@@ -70,7 +70,7 @@ mysqli_close($link);
      
           
             
-                <h2><?php echo $name; ?> </h2>
+                <h2>Chat Room </h2>
         
       
  
