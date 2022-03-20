@@ -265,7 +265,7 @@ $q1 = "SELECT * FROM messages WHERE messages.groupedid = '$room'";
  }
 else
 {
-if($row['profilename']!=$first['profilename'])
+if($row['profilename']!=$named)
 {
 ?>
  <div id="triangle" class="triangle"></div>
