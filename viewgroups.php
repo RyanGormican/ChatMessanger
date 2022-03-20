@@ -86,7 +86,7 @@ $typid = $_SESSION['type'];
 if ($typid == "moderator")
 {
 echo "<tr>";
- echo "<td class = 'borderelement2', colspan = '2'>":
+ echo "<td class = 'borderelement2', colspan = '2'>";
    echo "<a href='creategroup.php' > <i class='fa-solid fa-user-group'></i> Create  </a>";
   echo" </td>";
 echo "</tr>";
