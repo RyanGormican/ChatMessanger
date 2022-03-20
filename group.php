@@ -237,7 +237,7 @@ echo "<form id='myform' action='group.php?a=$room&b=$name' method='POST' >";
 <?php
 $db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "heroku_4db4cf2503e4bbb");
  
-$q1 = "SELECT * FROM messages WHERE messages.groupedid = '$room'";
+$q1 = "SELECT messages.text,messages.profilename, messages.time, FROM messages WHERE messages.groupedid = '$room'";
  $run = $db->query($q1);
  while($row = mysqli_fetch_assoc($run)) {
 echo"<div id='message1' class='message1'>";
