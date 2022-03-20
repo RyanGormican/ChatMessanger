@@ -297,15 +297,16 @@ endwhile;
     <footer>
         <table>
         <tr>
-           <th>
+           <td>
             <textarea id="text" name="text"
-                rows='3' cols='50'
+                rows='4' cols='75'
                 placeholder="Type your message">
-            </textarea></th>
-           <th>
+            </textarea>
+	</td>
+           <td>
             <input class="input2" type="submit"
             id="submit" name="submit" value="send">
-           </th>               
+           </td>               
         </tr>
         </table>               
     </footer>
