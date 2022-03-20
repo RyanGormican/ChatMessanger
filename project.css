@@ -291,11 +291,22 @@ text-align:center;
 color: gold;
 font-family: "Helvetica";
 font-style:oblique;
-background-color:rgba(196, 164, 132);
 margin: 0px 540px 0px 540px;
 border-radius: 25px;
 padding: 20px;
 height: 500px;
 overflow-y: auto;
 border: 10px solid rgb(92, 64, 51);
+}
+main .message{
+    padding:10px;
+    color: gold;
+    text-align:left;
+    background-color:rgba(196, 164, 132);
+    line-height:20px;
+    margin-left:15px;
+    max-width:90%;
+    display:inline-block;
+    border-radius:5px;
+    clear:both;
 }
