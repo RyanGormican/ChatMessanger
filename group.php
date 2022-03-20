@@ -585,21 +585,7 @@ $background_class = 'alert-success';
 
 			user_id = $('#login_user_id').val();
 
-			$.ajax({
-				url:"action.php",
-				method:"POST",
-				data:{user_id:user_id, action:'leave'},
-				success:function(data)
-				{
-					var response = JSON.parse(data);
-
-					if(response.status == 1)
-					{
-						conn.close();
-						location = 'index.php';
-					}
-				}
-			})
+			
 
 		});
 
