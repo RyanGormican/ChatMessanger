@@ -451,7 +451,7 @@ class chattersInstance
 <div class="card">
 <div class="card-header">
 	<h2>
-	<?php echo $name ?> 
+	<?php echo $room ?> 
 	</h2></div>
 <div class="messages">
 <?php
