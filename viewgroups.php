@@ -83,11 +83,11 @@ $resultT = mysqli_query($db,$q2);
 $rowT = $resultT->fetch_assoc();
 $_SESSION["type"] = $rowT["type"];
 $typid = $_SESSION['type'];
-if ($typid = "moderator")
+if ($typid == "moderator")
 {
 echo "<tr>";
- echo "<td class = "borderelement2" colspan = "2">":
-   echo "<a href="creategroup.php" > <i class="fa-solid fa-user-group"></i> Create  </a>";
+ echo "<td class = 'borderelement2' colspan = '2'>":
+   echo "<a href='creategroup.php' > <i class='fa-solid fa-user-group'></i> Create  </a>";
   echo" </td>";
 echo "</tr>";
 	}
