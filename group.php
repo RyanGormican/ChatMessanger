@@ -264,8 +264,8 @@ echo "<br/>";
         <tr>
            <td>
             <textarea id="text" name="text"
-                rows='4' cols='75'
-                placeholder="Type your message">
+                rows='2' cols='40'
+                placeholder="Write your message in the chat box here">
             </textarea>
 	</td>
            <td>
