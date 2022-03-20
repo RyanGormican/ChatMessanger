@@ -54,7 +54,7 @@ mysqli_close($link);
 <link rel="stylesheet" type = "text/css" href="project.css">
 <script src="https://kit.fontawesome.com/cb59c9bd28.js" crossorigin="anonymous"></script>
 <body class = "background">
-<div class = "messengerWindowsignup"> 
+<div> 
 <style>
 	
 *{
