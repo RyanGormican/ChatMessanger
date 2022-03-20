@@ -238,8 +238,8 @@ function show_func(){
 <?php
 $db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "heroku_4db4cf2503e4bbb");
  
-$query = "SELECT * FROM messages WHERE messages.groupedid = '$room'";
- $run = $db->query($query);
+$q1 = "SELECT * FROM messages WHERE messages.groupedid = '$room'";
+ $run = $db->query($q1);
  $i=0;
   
  while($row = $run->fetch_array()) :
@@ -270,7 +270,7 @@ if($row['profilename']!=$first['profilename'])
  <div id="triangle" class="triangle"></div>
  <div id="message" class="message">
  <span style="color:white;float:left;">
-   <?php echo $row['text']; ?>
+   <?php echo $row['Text']; ?>
  </span> <br/>
  <div>
   <span style="color:black;float:right;
