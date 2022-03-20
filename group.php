@@ -53,7 +53,13 @@ mysqli_close($link);
 ?>
 <html>
 <head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type = "text/css" href="assignment.css">
+<script src="https://kit.fontawesome.com/cb59c9bd28.js" crossorigin="anonymous"></script>
+<body class = "background">
 <style>
+	
 *{
     box-sizing:border-box;
 }
@@ -231,14 +237,10 @@ function show_func(){
 <form id="myform" action="Group_chat.php" method="POST" >
 <div class="inner_div" id="chathist">
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db_name = "chat_app";
-$con = new mysqli($host, $user, $pass, $db_name);
+$db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "heroku_4db4cf2503e4bbb");
  
 $query = "SELECT * FROM chats";
- $run = $con->query($query);
+ $run = $db->query($query);
  $i=0;
   
  while($row = $run->fetch_array()) :
