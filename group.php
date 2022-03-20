@@ -31,543 +31,330 @@ class Database
 	}
 }
 ?>
-<?php 
-class groupInstance
-{
-	private $group_id;
-	private $user_id;
-	private $message;
-	private $created_on;
-	protected $connect;
 
-	public function setChatId($group_id)
-	{
-		$this->group_id = $group_id;
-	}
-
-	function getChatId()
-	{
-		return $this->group_id;
-	}
-
-	function setUserId($user_id)
-	{
-		$this->user_id = $user_id;
-	}
-
-	function getUserId()
-	{
-		return $this->user_id;
-	}
-
-	function setMessage($message)
-	{
-		$this->message = $message;
-	}
-
-	function getMessage()
-	{
-		return $this->message;
-	}
-
-	function setCreatedOn($created_on)
-	{
-		$this->created_on = $created_on;
-	}
-
-	function getCreatedOn()
-	{
-		return $this->created_on;
-	}
-
-	public function __construct()
-	{
-		$database_object = new Database;
-		$this->addconnection = $database_object->addconnection();
-	}
-
-	function save_chat()
-	{
-		$query = "
-		INSERT INTO GroupMessage
-			(profileid, text, created_on) 
-			VALUES (:profileid, :text, :created_on)
-		";
-
-		$statement = $this->connect->prepare($query);
-
-		$statement->bindParam(':userid', $this->user_id);
-
-		$statement->bindParam(':msg', $this->message);
-
-		$statement->bindParam(':created_on', $this->created_on);
-
-		$statement->execute();
-	}
-
-	function fetch_groupmessages()
-	{
-		$q1 = "SELECT * FROM GroupMessage WHERE GroupMessage.groupid = '$room'";
-
-		$results = $this->addconnection->prepare($query);
-		$results->execute();
-		return $statement->fetchAll(PDO::FETCH_ASSOC);
-	}
-}
-	
-?>
 <?php
-
-class chattersInstance
-{
-	private $user_id;
-	private $user_name;
-	private $user_email;
-	private $user_password;
-	private $user_profile;
-	private $user_status;
-	private $user_created_on;
-	private $user_verification_code;
-	private $user_login_status;
-	public $connect;
-
-	public function __construct()
-	{
-		$database_object = new Database;
-		$this->addconnection = $database_object->addconnection();
-	}
-
-	function setUserId($user_id)
-	{
-		$this->user_id = $user_id;
-	}
-
-	function getUserId()
-	{
-		return $this->user_id;
-	}
-
-	function setUserName($user_name)
-	{
-		$this->user_name = $user_name;
-	}
-
-	function getUserName()
-	{
-		return $this->user_name;
-	}
-
-	function setUserEmail($user_email)
-	{
-		$this->user_email = $user_email;
-	}
-
-	function getUserEmail()
-	{
-		return $this->user_email;
-	}
-
-	function setUserPassword($user_password)
-	{
-		$this->user_password = $user_password;
-	}
-
-	function getUserPassword()
-	{
-		return $this->user_password;
-	}
-
-	function setUserProfile($user_profile)
-	{
-		$this->user_profile = $user_profile;
-	}
-
-	function getUserProfile()
-	{
-		return $this->user_profile;
-	}
-
-	function setUserStatus($user_status)
-	{
-		$this->user_status = $user_status;
-	}
-
-	function getUserStatus()
-	{
-		return $this->user_status;
-	}
-
-	function setUserCreatedOn($user_created_on)
-	{
-		$this->user_created_on = $user_created_on;
-	}
-
-	function getUserCreatedOn()
-	{
-		return $this->user_created_on;
-	}
-
-	function setUserVerificationCode($user_verification_code)
-	{
-		$this->user_verification_code = $user_verification_code;
-	}
-
-	function getUserVerificationCode()
-	{
-		return $this->user_verification_code;
-	}
-
-	function setUserLoginStatus($user_login_status)
-	{
-		$this->user_login_status = $user_login_status;
-	}
-
-	function getUserLoginStatus()
-	{
-		return $this->user_login_status;
-	}
-
-
-
-	function get_user_data_by_email()
-	{
-		$query = "
-		SELECT * FROM chat_user_table 
-		WHERE user_email = :user_email
-		";
-
-		$statement = $this->connect->prepare($query);
-
-		$statement->bindParam(':user_email', $this->user_email);
-
-		if($statement->execute())
-		{
-			$user_data = $statement->fetch(PDO::FETCH_ASSOC);
-		}
-		return $user_data;
-	}
-
-	function save_data()
-	{
-		$query = "
-		INSERT INTO chat_user_table (user_name, user_email, user_password, user_profile, user_status, user_created_on, user_verification_code) 
-		VALUES (:user_name, :user_email, :user_password, :user_profile, :user_status, :user_created_on, :user_verification_code)
-		";
-		$statement = $this->connect->prepare($query);
-
-		$statement->bindParam(':user_name', $this->user_name);
-
-		$statement->bindParam(':user_email', $this->user_email);
-
-		$statement->bindParam(':user_password', $this->user_password);
-
-		$statement->bindParam(':user_profile', $this->user_profile);
-
-		$statement->bindParam(':user_status', $this->user_status);
-
-		$statement->bindParam(':user_created_on', $this->user_created_on);
-
-		$statement->bindParam(':user_verification_code', $this->user_verification_code);
-
-		if($statement->execute())
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-
-	function is_valid_email_verification_code()
-	{
-		$query = "
-		SELECT * FROM chat_user_table 
-		WHERE user_verification_code = :user_verification_code
-		";
-
-		$statement = $this->connect->prepare($query);
-
-		$statement->bindParam(':user_verification_code', $this->user_verification_code);
-
-		$statement->execute();
-
-		if($statement->rowCount() > 0)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-
-	function enable_user_account()
-	{
-		$query = "
-		UPDATE chat_user_table 
-		SET user_status = :user_status 
-		WHERE user_verification_code = :user_verification_code
-		";
-
-		$statement = $this->connect->prepare($query);
-
-		$statement->bindParam(':user_status', $this->user_status);
-
-		$statement->bindParam(':user_verification_code', $this->user_verification_code);
-
-		if($statement->execute())
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-
-	function update_user_login_data()
-	{
-		$query = "
-		UPDATE chat_user_table 
-		SET user_login_status = :user_login_status 
-		WHERE user_id = :user_id
-		";
-
-		$statement = $this->connect->prepare($query);
-
-		$statement->bindParam(':user_login_status', $this->user_login_status);
-
-		$statement->bindParam(':user_id', $this->user_id);
-
-		if($statement->execute())
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-
-	function get_user_data_by_id()
-	{
-		$query = "
-		SELECT * FROM chat_user_table 
-		WHERE user_id = :user_id";
-
-		$statement = $this->connect->prepare($query);
-
-		$statement->bindParam(':user_id', $this->user_id);
-
-		try
-		{
-			if($statement->execute())
-			{
-				$user_data = $statement->fetch(PDO::FETCH_ASSOC);
-			}
-			else
-			{
-				$user_data = array();
-			}
-		}
-		catch (Exception $error)
-		{
-			echo $error->getMessage();
-		}
-		return $user_data;
-	}
-
-
-	function update_data()
-	{
-		$query = "
-		UPDATE chat_user_table 
-		SET user_name = :user_name, 
-		user_email = :user_email, 
-		user_password = :user_password, 
-		user_profile = :user_profile  
-		WHERE user_id = :user_id
-		";
-
-		$statement = $this->connect->prepare($query);
-
-		$statement->bindParam(':user_name', $this->user_name);
-
-		$statement->bindParam(':user_email', $this->user_email);
-
-		$statement->bindParam(':user_password', $this->user_password);
-
-		$statement->bindParam(':user_profile', $this->user_profile);
-
-		$statement->bindParam(':user_id', $this->user_id);
-
-		if($statement->execute())
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-
-	function fetch_chatter()
-	{
-		$query = "
-		SELECT * FROM Profile WHERE profile_id = '$id'  
-		";
-
-		$statement = $this->addconnection->prepare($query);
-
-		$statement->execute();
-
-		$data = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-		return $data;
-	}
-
+if (isset($_POST['submit'])){
+/* Attempt MySQL server connection. Assuming
+you are running MySQL server with default
+setting (user 'root' with no password) */
+$link = mysqli_connect("localhost",
+            "root", "", "chat_app");
+  
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. "
+          . mysqli_connect_error());
 }
-
-
-
+  
+// Escape user inputs for security
+$un= mysqli_real_escape_string(
+      $link, $_REQUEST['uname']);
+$m = mysqli_real_escape_string(
+      $link, $_REQUEST['msg']);
+date_default_timezone_set('Asia/Kolkata');
+$ts=date('y-m-d h:ia');
+  
+// Attempt insert query execution
+$sql = "INSERT INTO chats (uname, msg, dt)
+        VALUES ('$un', '$m', '$ts')";
+if(mysqli_query($link, $sql)){
+    ;
+} else{
+    echo "ERROR: Message not sent!!!";
+}
+ // Close connection
+mysqli_close($link);
+}
 ?>
-
-
-
-<!DOCTYPE html>
 <html>
 <head>
-	<title> Group chat </title>
-    <link href="vendor-front/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <script src="vendor-front/jquery/jquery.min.js"></script>
-    <script src="vendor-front/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor-front/jquery-easing/jquery.easing.min.js"></script>
-    <script type="text/javascript" src="vendor-front/parsley/dist/parsley.min.js"></script>
-    <link href="vendor-front/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="project.css"/>
-	<style type="text/css">
-		#messages_area
-		{
-			height: 500px;
-			overflow-y: auto;
-			background-color:#e6e6e6;
-		}
-
-	</style>
-</head>
-<body class = "background">
-<div class = "messengerWindowsignup"> 
-<div class="row">
-<div class="col-lg-6">
-<div class="card">
-<div class="card-header">
-	<h2>
-	<?php echo $name ?> 
-	</h2></div>
-<div class="messages">
+<style>
+*{
+    box-sizing:border-box;
+}
+body{
+    background-color:#abd9e9;
+    font-family:Arial;
+}
+#container{
+    width:500px;
+    height:700px;
+    background:white;
+    margin:0 auto;
+    font-size:0;
+    border-radius:5px;
+    overflow:hidden;
+}
+main{
+    width:500px;
+    height:700px;
+    display:inline-block;
+    font-size:15px;
+    vertical-align:top;
+}
+main header{
+    height:100px;
+    padding:30px 20px 30px 40px;
+    background-color:#622569;  
+}
+main header > *{
+    display:inline-block;
+    vertical-align:top;
+}
+main header img:first-child{
+    width:24px;
+    margin-top:8px;
+}  
+main header img:last-child{
+    width:24px;
+    margin-top:8px;
+}
+main header div{
+    margin-left:90px;
+    margin-right:90px;
+}
+main header h2{
+    font-size:25px;
+    margin-top:5px;
+    text-align:center;
+    color:#FFFFFF;  
+}
+main .inner_div{
+    padding-left:0;
+    margin:0;
+    list-style-type:none;
+    position:relative;
+    overflow:auto;
+    height:500px;
+    background-image:url(
+https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200911064223/bg.jpg);
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    position: relative;
+    border-top:2px solid #fff;
+    border-bottom:2px solid #fff;
+     
+}
+main .triangle{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 8px 8px;
+    border-color: transparent transparent
+      #58b666 transparent;
+    margin-left:20px;
+    clear:both;
+}
+main .message{
+    padding:10px;
+    color:#000;
+    margin-left:15px;
+    background-color:#58b666;
+    line-height:20px;
+    max-width:90%;
+    display:inline-block;
+    text-align:left;
+    border-radius:5px;
+    clear:both;
+}
+main .triangle1{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 8px 8px;
+    border-color: transparent
+      transparent #6fbced transparent;
+    margin-right:20px;
+    float:right;
+    clear:both;
+}
+main .message1{
+    padding:10px;
+    color:#000;
+    margin-right:15px;
+    background-color:#6fbced;
+    line-height:20px;
+    max-width:90%;
+    display:inline-block;
+    text-align:left;
+    border-radius:5px;
+    float:right;
+    clear:both;
+}
+ 
+main footer{
+    height:150px;
+    padding:20px 30px 10px 20px;
+    background-color:#622569;
+}
+main footer .input1{
+    resize:none;
+    border:100%;
+    display:block;
+    width:120%;
+    height:55px;
+    border-radius:3px;
+    padding:20px;
+    font-size:13px;
+    margin-bottom:13px;
+}
+main footer textarea{
+    resize:none;
+    border:100%;
+    display:block;
+    width:140%;
+    height:55px;
+    border-radius:3px;
+    padding:20px;
+    font-size:13px;
+    margin-bottom:13px;
+    margin-left:20px;
+}
+main footer .input2{
+    resize:none;
+    border:100%;
+    display:block;
+    width:40%;
+    height:55px;
+    border-radius:3px;
+    padding:20px;
+    font-size:13px;
+    margin-bottom:13px;
+    margin-left:100px;
+    color:white;
+    text-align:center;
+    background-color:black;
+    border: 2px solid white; 
+}
+}
+main footer textarea::placeholder{
+    color:#ddd;
+}
+ 
+</style>
+<body onload="show_func()">
+<div id="container">
+    <main>
+        <header>
+            <img src="https://s3-us-west-2.amazonaws.com/
+             s.cdpn.io/1940306/ico_star.png" alt="">
+            <div>
+                <h2>GROUP CHAT</h2>
+            </div>
+            <img src="https://s3-us-west-2.amazonaws.com/
+            s.cdpn.io/1940306/ico_star.png" alt="">
+        </header>
+ 
+<script>
+function show_func(){
+ 
+ var element = document.getElementById("chathist");
+    element.scrollTop = element.scrollHeight;
+  
+ }
+ </script>
+  
+<form id="myform" action="Group_chat.php" method="POST" >
+<div class="inner_div" id="chathist">
 <?php
-$group_room = new groupInstance; 
-$group_chatters = new chattersInstance;
-$groupmes = $group_room->fetch_groupmessages();
-$chattermes = $group_chatters->fetch_chatter(); 
-foreach($groupmes as $group)
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db_name = "chat_app";
+$con = new mysqli($host, $user, $pass, $db_name);
+ 
+$query = "SELECT * FROM chats";
+ $run = $con->query($query);
+ $i=0;
+  
+ while($row = $run->fetch_array()) :
+ if($i==0){
+ $i=5;
+ $first=$row;
+ ?>
+ <div id="triangle1" class="triangle1"></div>
+ <div id="message1" class="message1">
+ <span style="color:white;float:right;">
+ <?php echo $row['msg']; ?></span> <br/>
+ <div>
+   <span style="color:black;float:left;
+   font-size:10px;clear:both;">
+    <?php echo $row['uname']; ?>,
+        <?php echo $row['dt']; ?>
+   </span>
+</div>
+</div>
+<br/><br/>
+ <?php
+ }
+else
 {
-if(isset($_SESSION['id']))
+if($row['uname']!=$first['uname'])
 {
-$fromuser='$id';
-$row_class = 'row justify-content-start';
-$background_class = 'text-dark alert-light';
+?>
+ <div id="triangle" class="triangle"></div>
+ <div id="message" class="message">
+ <span style="color:white;float:left;">
+   <?php echo $row['msg']; ?>
+ </span> <br/>
+ <div>
+  <span style="color:black;float:right;
+          font-size:10px;clear:both;">
+  <?php echo $row['uname']; ?>,
+        <?php echo $row['dt']; ?>
+ </span>
+</div>
+</div>
+<br/><br/>
+<?php
 }
 else
 {
-$from = $group['user_name'];
-$row_class = 'row justify-content-end';
-$background_class = 'alert-success';
-
-echo '	<div class="'.$row_class.'"><div class="col-sm-10"><div class="shadow-sm alert '.$background_class.'"><b>'.$from.' - </b>'.$chat["msg"].'<br />	<div class="text-right"> <small><i>'.$chat["created_on"].'</i></small</div></div></div></div>';
+?>
+ <div id="triangle1" class="triangle1"></div>
+ <div id="message1" class="message1">
+ <span style="color:white;float:right;">
+  <?php echo $row['msg']; ?>
+ </span> <br/>
+ <div>
+ <span style="color:black;float:left;
+         font-size:10px;clear:both;">
+ <?php echo $row['uname']; ?>,
+      <?php echo $row['dt']; ?>
+ </span>
+</div>
+</div>
+<br/><br/>
+<?php
 }
+}
+endwhile;
 ?>
 </div>
+    <footer>
+        <table>
+        <tr>
+           <th>
+            <input  class="input1" type="text"
+                    id="uname" name="uname"
+                    placeholder="From">
+           </th>
+           <th>
+            <textarea id="msg" name="msg"
+                rows='3' cols='50'
+                placeholder="Type your message">
+            </textarea></th>
+           <th>
+            <input class="input2" type="submit"
+            id="submit" name="submit" value="send">
+           </th>               
+        </tr>
+        </table>               
+    </footer>
+</form>
+</main>   
 </div>
-
-				<form method="post" id="chat_form" data-parsley-errors-container="#validation_error">
-					<div class="input-group mb-3">
-						<textarea class="form-control" id="chat_message" name="chat_message" placeholder="Enter your message" data-parsley-maxlength="1000" data-parsley-pattern="/^[a-zA-Z0-9\s]+$/" required></textarea>
-						<div class="input-group-append">
-							<button type="submit" name="send" id="send" class="btn btn-primary"><i class="fa fa-paper-plane"></i></button>
-						</div>
-					</div>
-					<div id="validation_error"></div>
-				</form>
-			</div>
-			<div class="col-lg-4">
-				<?php
-
-				$login_user_id = '';
-
-				foreach($_SESSION['user_data'] as $key => $value)
-				{
-					$login_user_id = $value['id'];
-				?>
-				<?php
-				}
-				?>
-<div class="card mt-3">
-</div>
-</div>
-</div>
+ 
 </body>
-<script type="text/javascript">
-	$(document).ready(function()
-{
-		var conn = new WebSocket('wss://localhost:8080');
-		conn.onopen = function(e) {
-		    console.log("Connection established!");
-		};
-
-		conn.onmessage = function(e) {
-		    console.log(e.data);
-
-		    var data = JSON.parse(e.data);
-
-		    var row_class = '';
-
-		    var background_class = '';
-
-		    if(data.from == 'Me')
-		    {
-		    	row_class = 'row justify-content-start';
-		    	background_class = 'text-dark alert-light';
-		    }
-		    else
-		    {
-		    	row_class = 'row justify-content-end';
-		    	background_class = 'alert-success';
-		    }
-
-		    var html_data = "<div class='"+row_class+"'><div class='col-sm-10'><div class='shadow-sm alert "+background_class+"'><b>"+data.from+" - </b>"+data.msg+"<br /><div class='text-right'><small><i>"+data.dt+"</i></small></div></div></div></div>";
-		    $('#messages_area').append(html_data);
-		    $("#chat_message").val("");
-		};
-		$('#chat_form').parsley();
-		$('#messages_area').scrollTop($('#messages_area')[0].scrollHeight);
-		$('#chat_form').on('submit', function(event){
-			event.preventDefault();
-			if($('#chat_form').parsley().isValid())
-			{
-				var user_id = $('#login_user_id').val();
-				var message = $('#chat_message').val();
-				var data = {
-				userId : user_id,
-				msg : message
-				};
-				conn.send(JSON.stringify(data));
-				$('#messages_area').scrollTop($('#messages_area')[0].scrollHeight);
-			}
-		});
-	});
-	};
-</script>
 </html>
-
