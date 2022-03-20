@@ -232,8 +232,9 @@ function show_func(){
   
  }
  </script>
-  
-<form id="myform" action="Group.php" method="POST" >
+ <?php
+echo "<form id='myform' action='Group.php?a=$room&b=$name' method='POST' >";
+?>
 <div class="inner_div" id="chathist">
 <?php
 $db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "heroku_4db4cf2503e4bbb");
