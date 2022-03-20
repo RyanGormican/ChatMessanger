@@ -209,7 +209,7 @@ main footer textarea::placeholder{
  
 </style>
 <body onload="show_func()">
-<div class ="messengerWindow2">
+<div class ="messengerWindowsignup">
     <main>
                 <h2>Chat Room </h2>
 <script>
