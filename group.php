@@ -21,37 +21,22 @@ else
 header("Location: index.php");
 }
 ?>
-<?php
-class Database
-{
-	function addconnection()
-	{
-		$database = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "heroku_4db4cf2503e4bbb");
-		return $database;
-	}
-}
-?>
+
 
 <?php
 if (isset($_POST['submit'])){
-/* Attempt MySQL server connection. Assuming
-you are running MySQL server with default
-setting (user 'root' with no password) */
-$link = mysqli_connect("localhost",
-            "root", "", "chat_app");
+$db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "heroku_4db4cf2503e4bbb");
+ 
+    if ($db->connect_error)
+    {
+        die ("Connection failed: " . $db->connect_error);
+    }
   
-// Check connection
-if($link === false){
-    die("ERROR: Could not connect. "
-          . mysqli_connect_error());
-}
-  
-// Escape user inputs for security
 $un= mysqli_real_escape_string(
       $link, $_REQUEST['uname']);
 $m = mysqli_real_escape_string(
       $link, $_REQUEST['msg']);
-date_default_timezone_set('Asia/Kolkata');
+date_default_timezone_set('America/Regina');
 $ts=date('y-m-d h:ia');
   
 // Attempt insert query execution
@@ -144,18 +129,6 @@ main .triangle{
     border-color: transparent transparent
       #58b666 transparent;
     margin-left:20px;
-    clear:both;
-}
-main .message{
-    padding:10px;
-    color:#000;
-    margin-left:15px;
-    background-color:#58b666;
-    line-height:20px;
-    max-width:90%;
-    display:inline-block;
-    text-align:left;
-    border-radius:5px;
     clear:both;
 }
 main .triangle1{
