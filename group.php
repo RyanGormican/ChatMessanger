@@ -39,7 +39,7 @@ $m = mysqli_real_escape_string(
 date_default_timezone_set('America/Regina');
 $ts=date('y-m-d h:ia');
 
-$sql = "INSERT INTO messenges (uname, msg, dt) VALUES ('$un', '$m', '$ts')";
+$sql = "INSERT INTO messenges (profilename, time,text,groupedid) VALUES ('$un', '$ts', '$m', '$room')";
 if(mysqli_query($link, $sql)){
     ;
 } else{
@@ -93,12 +93,12 @@ function show_func(){
  }
  </script>
   
-<form id="myform" action="Group_chat.php" method="POST" >
+<form id="myform" action="Group.php" method="POST" >
 <div class="inner_div" id="chathist">
 <?php
 $db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "heroku_4db4cf2503e4bbb");
  
-$query = "SELECT * FROM messenges";
+$query = "SELECT * FROM messenges WHERE groupedid = '$room'";
  $run = $db->query($query);
  $i=0;
   
@@ -110,12 +110,12 @@ $query = "SELECT * FROM messenges";
  <div id="triangle1" class="triangle1"></div>
  <div id="message1" class="message1">
  <span style="color:white;float:right;">
- <?php echo $row['msg']; ?></span> <br/>
+ <?php echo $row['text']; ?></span> <br/>
  <div>
    <span style="color:black;float:left;
    font-size:10px;clear:both;">
-    <?php echo $row['uname']; ?>,
-        <?php echo $row['dt']; ?>
+    <?php echo $row['profilename']; ?>,
+        <?php echo $row['time']; ?>
    </span>
 </div>
 </div>
@@ -124,19 +124,19 @@ $query = "SELECT * FROM messenges";
  }
 else
 {
-if($row['uname']!=$first['uname'])
+if($row['profilename']!=$first['profilename'])
 {
 ?>
  <div id="triangle" class="triangle"></div>
  <div id="message" class="message">
  <span style="color:white;float:left;">
-   <?php echo $row['msg']; ?>
+   <?php echo $row['text']; ?>
  </span> <br/>
  <div>
   <span style="color:black;float:right;
           font-size:10px;clear:both;">
-  <?php echo $row['uname']; ?>,
-        <?php echo $row['dt']; ?>
+  <?php echo $row['profilename']; ?>,
+        <?php echo $row['time']; ?>
  </span>
 </div>
 </div>
@@ -149,13 +149,13 @@ else
  <div id="triangle1" class="triangle1"></div>
  <div id="message1" class="message1">
  <span style="color:white;float:right;">
-  <?php echo $row['msg']; ?>
+  <?php echo $row['text']; ?>
  </span> <br/>
  <div>
  <span style="color:black;float:left;
          font-size:10px;clear:both;">
- <?php echo $row['uname']; ?>,
-      <?php echo $row['dt']; ?>
+ <?php echo $row['profilename']; ?>,
+      <?php echo $row['time']; ?>
  </span>
 </div>
 </div>
