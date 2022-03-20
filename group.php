@@ -13,7 +13,7 @@ $db->close();
  if(isset($_GET['a']) ){
     $_SESSION['info']=$_GET['a'];
  }
-//$name = $_GET['b'];
+$name = $_GET['b'];
 $room = $_GET['a'];
  }
 else
@@ -73,10 +73,7 @@ class groupInstance
 
 	public function __construct()
 	{
-		require_once("Database_connection.php");
-
 		$database_object = new Database_connection;
-
 		$this->connect = $database_object->connect();
 	}
 
@@ -127,10 +124,7 @@ class chattersInstance
 
 	public function __construct()
 	{
-		require_once('Database_connection.php');
-
 		$database_object = new Database_connection;
-
 		$this->connect = $database_object->connect();
 	}
 
@@ -451,7 +445,7 @@ class chattersInstance
 <div class="card">
 <div class="card-header">
 	<h2>
-	<?php echo $room ?> 
+	<?php echo $name ?> 
 	</h2></div>
 <div class="messages">
 <?php
@@ -472,15 +466,8 @@ else
 $from = $group['user_name'];
 $row_class = 'row justify-content-end';
 $background_class = 'alert-success';
-}
 
-						echo '
-						<div class="'.$row_class.'">
-							<div class="col-sm-10">
-								<div class="shadow-sm alert '.$background_class.'">
-									<b>'.$from.' - </b>'.$chat["msg"].'
-									<br />
-									<div class="text-right">
+echo '	<div class="'.$row_class.'"><div class="col-sm-10"><div class="shadow-sm alert '.$background_class.'"><b>'.$from.' - </b>'.$chat["msg"].'<br />	<div class="text-right">
 										<small><i>'.$chat["created_on"].'</i></small>
 									</div>
 								</div>
@@ -494,7 +481,7 @@ $background_class = 'alert-success';
 
 				<form method="post" id="chat_form" data-parsley-errors-container="#validation_error">
 					<div class="input-group mb-3">
-						<textarea class="form-control" id="chat_message" name="chat_message" placeholder="Type Message Here" data-parsley-maxlength="1000" data-parsley-pattern="/^[a-zA-Z0-9\s]+$/" required></textarea>
+						<textarea class="form-control" id="chat_message" name="chat_message" placeholder="Enter your message" data-parsley-maxlength="1000" data-parsley-pattern="/^[a-zA-Z0-9\s]+$/" required></textarea>
 						<div class="input-group-append">
 							<button type="submit" name="send" id="send" class="btn btn-primary"><i class="fa fa-paper-plane"></i></button>
 						</div>
