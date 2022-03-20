@@ -223,7 +223,7 @@ main footer textarea::placeholder{
 <div id="container">
     <main>
 	   
-                <h2> <?php echo $name ?> </h2>
+                <h4> <?php echo $name ?> </h4>
 <script>
 function show_func(){
  
