@@ -122,7 +122,6 @@ $GTag = "GER4";
             $db->close();
             exit();
         }
-    }
 ?>
 <tr>
 <td colspan = "2">
