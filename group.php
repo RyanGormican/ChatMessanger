@@ -61,13 +61,14 @@ mysqli_close($db);
     box-sizing:border-box;
 }
 #container{
-    width:500px;
-    height:700px;
-    background:white;
-    margin:0 auto;
-    font-size:0;
-    border-radius:5px;
-    overflow:hidden;
+       color: gold;
+    font-family: "Helvetica";
+    font-style: oblique;
+    background-color: rgba(196, 164, 132);
+   border-radius: 25px;
+    padding: 20px;
+    border: 10px solid rgb(92, 64, 51);
+}
 }
 main .message{
     padding:10px;
@@ -219,7 +220,8 @@ main footer textarea::placeholder{
 <body onload="show_func()">
 <div id="container">
     <main>
-                <h2>Chat Room </h2>
+	   
+                <h2> <?php echo $name ?> </h2>
 <script>
 function show_func(){
  
