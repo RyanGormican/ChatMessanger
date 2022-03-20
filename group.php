@@ -39,9 +39,9 @@ $theTime=date('y-m-d h:ia');
 
 $q1 = "INSERT INTO messenges (profilename, time,text,groupedid) VALUES ('$named', '$theTime', '$message', '$room')";
 if(mysqli_query($link, $q1)){
-    ;
-} else{
-    echo "ERROR: Message not sent!!!";
+} 
+else{
+    echo "Message was unable to be processed.";
 }
  // Close connection
 mysqli_close($link);
