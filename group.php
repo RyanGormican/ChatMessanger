@@ -8,7 +8,7 @@ if(isset($_SESSION["email"]))
         die ("Connection failed: " . $db->connect_error);
     }
 $id = $_SESSION['id'];
-$name = $_SESSION['name'];
+$named = $_SESSION['name'];
 $db->close();
  if(isset($_GET['a']) ){
     $_SESSION['info']=$_GET['a'];
@@ -32,15 +32,15 @@ $db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "h
         die ("Connection failed: " . $db->connect_error);
     }
   
-$un= mysqli_real_escape_string(
-      $link, $_REQUEST['uname']);
-$m = mysqli_real_escape_string(
-      $link, $_REQUEST['msg']);
+$named= mysqli_real_escape_string(
+      $link, $_REQUEST['profilename']);
+$message = mysqli_real_escape_string(
+      $link, $_REQUEST['text']);
 date_default_timezone_set('America/Regina');
-$ts=date('y-m-d h:ia');
+$theTime=date('y-m-d h:ia');
 
-$sql = "INSERT INTO messenges (profilename, time,text,groupedid) VALUES ('$un', '$ts', '$m', '$room')";
-if(mysqli_query($link, $sql)){
+$q1 = "INSERT INTO messenges (profilename, time,text,groupedid) VALUES ('$named', '$theTime', '$message', '$room')";
+if(mysqli_query($link, $q1)){
     ;
 } else{
     echo "ERROR: Message not sent!!!";
