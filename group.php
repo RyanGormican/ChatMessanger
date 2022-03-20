@@ -67,13 +67,7 @@ mysqli_close($link);
 <body onload="show_func()">
 <div class ="messengerWindow2">
     <main>
-     
-          
-            
                 <h2>Chat Room </h2>
-        
-      
- 
 <script>
 function show_func(){
  
