@@ -233,7 +233,7 @@ function show_func(){
  }
  </script>
  <?php
-echo "<form id='myform' action='Group.php?a=$room&b=$name' method='POST' >";
+echo "<form id='myform' action='group.php?a=$room&b=$name' method='POST' >";
 ?>
 <div class="inner_div" id="chathist">
 <?php
