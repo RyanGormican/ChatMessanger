@@ -88,7 +88,7 @@ if ($tempD == "Scholar");
 $GTag = "FRE4";
 	}
 }
-else if ($tempG = "German")
+else if ($tempG == "German")
 {
 $tempD = $_POST['profiencyto'];
 if ($tempD == "Beginner");
