@@ -61,13 +61,15 @@ mysqli_close($db);
     box-sizing:border-box;
 }
 #container{
+ width:500px;
+    height:700px;
+    background:: rgba(196, 164, 132);
+    margin:0 auto;
+    font-size:0;
+    border-radius:5px;
+    overflow:hidden;
        color: gold;
     font-family: "Helvetica";
-    font-style: oblique;
-    background-color: rgba(196, 164, 132);
-   border-radius: 25px;
-    padding: 20px;
-    border: 10px solid rgb(92, 64, 51);
 }
 }
 main .message{
@@ -309,7 +311,7 @@ endwhile;
         <tr>
            <td>
             <textarea id="text" name="text"
-                rows='4' cols='75'
+                rows='3' cols='50'
                 placeholder="Type your message">
             </textarea>
 	</td>
