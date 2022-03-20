@@ -238,7 +238,7 @@ function show_func(){
 <?php
 $db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "heroku_4db4cf2503e4bbb");
  
-$query = "SELECT * FROM messenges WHERE messenges.groupedid = '$room'";
+$query = "SELECT * FROM messages WHERE messages.groupedid = '$room'";
  $run = $db->query($query);
  $i=0;
   
