@@ -240,16 +240,33 @@ $db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "h
 $q1 = "SELECT * FROM messages WHERE messages.groupedid = '$room'";
  $run = $db->query($q1);
  while($row = mysqli_fetch_assoc($run)) {
+if ($row['profilename'] == $id)
+{
+echo"<div id='message1' class='message2'>";
+ echo $row['Text']; 
+ echo "<br/>";
+ echo "<div>";
+ echo $row['profilename']; 
+echo "@";
+  echo $row['Time'];
+echo "</div>";
+echo "</div>";
+echo "<br/>";
+echo "<br/>";	
+}
+else{
 echo"<div id='message1' class='message1'>";
  echo $row['Text']; 
  echo "<br/>";
  echo "<div>";
  echo $row['profilename']; 
+echo "@";
   echo $row['Time'];
 echo "</div>";
 echo "</div>";
 echo "<br/>";
 echo "<br/>";
+}
  }
 	?>
 
