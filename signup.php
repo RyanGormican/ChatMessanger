@@ -93,7 +93,7 @@ $error = "connection failure";
     if($validate == true)
     {
 $id = "image_id";
-	// $q2 = "INSERT INTO Image476(image_url) VALUES ('$photo')";
+	// $q2 = "INSERT INTO Image(image_url) VALUES ('$photo')";
         $r31259104 = $db->query($q2);
       $q3 ="INSERT INTO Profile (email, profile_name, password, type) VALUES ('$email', '$username','$password','member')";
         $r3 = $db->query($q3);
@@ -158,7 +158,16 @@ Profile Name:
     <input type="text" id="username" name="username">
 </td>
 </tr>
-
+<tr>
+   <td class = "borderelement2">
+Profile Picture:
+</td>
+ <td class = "borderelement2" id = "pictureborder">
+<label class = "a"  id = "picturebordermes"></label>
+<br> 
+<input type ="file" name="fileToUpload" id="picture" accept="image/x-png,image/jpg">  
+</td>
+</tr>
 <tr> 
    <td class = "borderelement2">
     Password:
