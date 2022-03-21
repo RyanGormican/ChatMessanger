@@ -58,7 +58,7 @@ header("Location: index.php");
     {
         die ("Connection failed: " . $db->connect_error);
     }
-$q9 = "SELECT Ranks.rankid FROM Ranks, Profile WHERE Profile.profile_id = '$id'";
+$q9 = "SELECT Ranks.rankid FROM Ranks, Profile WHERE Rank.profile_id = '$id'";
 $r9 = $db->query($q9);
 while ( $rankrow = $r9->fetch_assoc()) {
 if ($rankrow['rankid'] != NULL)
