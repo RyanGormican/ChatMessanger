@@ -70,7 +70,7 @@ $groupD= $row['groupdescription'];
 $groupI = $row['group_id'];
 echo "<tr class = 'borderelement2'>";
 echo "<td colspan = '2'>";
-	  echo "<a href='chat.html?a=$name&b=$groupI' > $groupN </a>" ;
+	  echo "<a href='chat.html?username=$name&room=$groupI' > $groupN </a>" ;
 	  echo "</td>";
 	  echo "<td>";
 	  echo $groupD;
