@@ -68,7 +68,7 @@ $result = mysqli_query($db,$q1);
 $groupN = $row['groupname'];
 $groupD= $row['groupdescription'];
 $groupI = $row['group_id'];
-$groupNI = $groupN . $groupI;
+$groupNI = $groupN . " " . $groupI;
 echo "<tr class = 'borderelement2'>";
 echo "<td colspan = '2'>";
 	  echo "<a href='chat.html?username=$name&room=$groupNI' > $groupN </a>" ;
