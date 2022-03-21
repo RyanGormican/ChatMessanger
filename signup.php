@@ -21,17 +21,17 @@ $email = "";
 
 
 // Check file size
-if(isset($_POST["submitted"]) && $_POST["submitted"]) {
-if ($_FILES["fileToUpload"]["size"] > 500000) {
-$error = "size big";
-  $uploadOk = 0;
+//if(isset($_POST["submitted"]) && $_POST["submitted"]) {
+//if ($_FILES["fileToUpload"]["size"] > 500000) {
+//$error = "size big";
+//  $uploadOk = 0;
 }
 }
 // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
-$error = "not correct file";
-  $uploadOk = 0;
+//if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+//&& $imageFileType != "gif" ) {
+//$error = "not correct file";
+ // $uploadOk = 0;
 }
 
 //if(isset($_POST["submitted"]) && $_POST["submitted"]) {
