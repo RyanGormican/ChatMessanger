@@ -87,7 +87,7 @@ $error = "connection failure";
      //   {
     //        $validate = false;
    //     }
-    }
+    
 
     if($validate == true)
     {
@@ -110,7 +110,7 @@ $id = "image_id";
 	header("Location: index.php");
         $db->close();
     }
-
+ }
 //}
 ?>
 
