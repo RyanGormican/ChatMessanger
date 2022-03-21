@@ -44,7 +44,7 @@ $error = "not correct file";
  // } else {
   //}
 //}
-}
+//}
  if (isset($_POST["submitted"]) && $_POST["submitted"])
 {
     $email = trim($_POST["email"]);
