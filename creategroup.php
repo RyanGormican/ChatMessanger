@@ -71,19 +71,19 @@ if ($tempD == "Beginner");
 	{
 $GTag = "FRE0FRE1FRE2FRE3FRE4";
 	}
-if ($tempD == "Intermediate");
+if ($tempD == "Intermediate")
 	{
 $GTag = "FRE1FRE2FRE3FRE4";
 	}
-if ($tempD == "Novice");
+if ($tempD == "Novice")
 	{
 $GTag = "FRE2FRE3FRE4";
 	}
-if ($tempD == "Expert");
+if ($tempD == "Expert")
 	{
 $GTag = "FRE3FRE4";
 	}
-if ($tempD == "Scholar");
+if ($tempD == "Scholar")
 	{
 $GTag = "FRE4";
 	}
@@ -91,23 +91,23 @@ $GTag = "FRE4";
 else if ($tempG == "German")
 {
 $tempD = $_POST['profiencyto'];
-if ($tempD == "Beginner");
+if ($tempD == "Beginner")
 	{
-$GTag = "GER0GER1GER2GER3GER4";
+$GTag = "GER0GER1GER2GER3GER4"
 	}
-if ($tempD == "Intermediate");
+if ($tempD == "Intermediate")
 	{
 $GTag = "GER1GER2GER3GER4";
 	}
-if ($tempD == "Novice");
+if ($tempD == "Novice")
 	{
 $GTag = "GER2GER3GER4";
 	}
-if ($tempD == "Expert");
+if ($tempD == "Expert")
 	{
 $GTag = "GER3GER4";
 	}
-if ($tempD == "Scholar");
+if ($tempD == "Scholar")
 	{
 $GTag = "GER4";
 	}
