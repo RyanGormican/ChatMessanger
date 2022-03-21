@@ -179,7 +179,7 @@ $GTag = "GER4";
     </table>
   <h2> 
        <a href="viewgroups.php" >Back  </a>   
-      <input type="submit" value ="submitted"> 
+      <input type="submit" value ="Create Group"> 
   </h2>
   </form>
 <br>
