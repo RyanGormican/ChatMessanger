@@ -37,13 +37,13 @@ header("Location: index.php");
   <table class = "messengerWindow2">
 <?php
 	  if (isset($_POST["submitted"]) && $_POST["submitted"]){
-$nameT=  trim($_POST['name']);
-$description = trim($_POST['descriptiion']);
-$tempG =  trim($_POST['language']);
+$nameT=  trim($_POST["name"]);
+$description = trim($_POST["descriptiion"]);
+$tempG =  trim($_POST["language"]);
 $GTag;
 if ($tempG == "English")
 {
-$tempD = trim($_POST['profiencyto']);
+$tempD = trim($_POST["profiencyto"]);
 if ($tempD == "Beginner")
 	{
 $GTag = "ENG0ENG1ENG2ENG3ENG4";
@@ -67,7 +67,7 @@ $GTag = "ENG4";
 }
 else if ($tempG == "French")
 {
-$tempD = trim($_POST['profiencyto']);
+$tempD = trim($_POST["profiencyto"]);
 if ($tempD == "Beginner")
 	{
 $GTag = "FRE0FRE1FRE2FRE3FRE4";
@@ -91,7 +91,7 @@ $GTag = "FRE4";
 }
 else if ($tempG == "German")
 {
-$tempD = trim($_POST['profiencyto']);
+$tempD = trim($_POST["profiencyto");
 if ($tempD == "Beginner")
 	{
 $GTag = "GER0GER1GER2GER3GER4";
