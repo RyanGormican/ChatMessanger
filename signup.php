@@ -98,7 +98,7 @@ $id = "image_id";
       $q3 ="INSERT INTO Profile (email, profile_name, password, type) VALUES ('$email', '$username','$password','member')";
         $r3 = $db->query($q3);
         
-        if ($r3 === true)
+        if ($r3 == true)
         {	
 	$error = "going";
             header("Location: index.php");
