@@ -159,17 +159,17 @@ Profile Name:
     <input type="text" id="username" name="username">
 </td>
 </tr>
-<tr>
-   <td class = "borderelement2">
-Profile Picture:
-</td>
- <td class = "borderelement2" id = "pictureborder">
-<label class = "a"  id = "picturebordermes"></label>
-<br> 
-<input type ="file" name="fileToUpload" id="picture" accept="image/x-png,image/jpg">  
-</td>
-</tr>
-<tr> 
+//<tr>
+//   <td class = "borderelement2">
+//Profile Picture:
+//</td>
+// <td class = "borderelement2" id = "pictureborder">
+//<label class = "a"  id = "picturebordermes"></label>
+//<br> 
+//<input type ="file" name="fileToUpload" id="picture" accept="image/x-png,image/jpg">  
+//</td>
+//</tr>
+//<tr> 
    <td class = "borderelement2">
     Password:
 <br>
