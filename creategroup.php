@@ -123,6 +123,11 @@ $GTag = "GER4";
             $db->close();
             exit();
         }
+	else
+	{
+	header("Location: index.php");
+	exit();
+	}
 	}
 ?>
 <tr>
