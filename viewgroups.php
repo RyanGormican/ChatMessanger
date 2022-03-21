@@ -83,6 +83,7 @@ echo "<td colspan = '2'>";
 }
 else
 {
+$id =  trim($id);
 $t0 = "INSERT INTO Ranks(profile_id, rankid, ranklanguage) VALUES('$id','ENG0','ENGLISH')"; 
 $r10 = $db->query($t0);
 $t1 = "INSERT INTO Ranks(profile_id, rankid, ranklanguage) VALUES('$id','FRE0','FRENCH')"; 
