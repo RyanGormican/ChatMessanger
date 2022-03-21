@@ -94,7 +94,7 @@ $error = "connection failure";
     {
 $id = "image_id";
 	// $q2 = "INSERT INTO Image(image_url) VALUES ('$photo')";
-        $r31259104 = $db->query($q2);
+      //  $r31259104 = $db->query($q2);
       $q3 ="INSERT INTO Profile (email, profile_name, password, type) VALUES ('$email', '$username','$password','member')";
         $r3 = $db->query($q3);
         
