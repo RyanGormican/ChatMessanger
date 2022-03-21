@@ -109,7 +109,7 @@ fullvalidate = false;
 else if(signupelementwrong[j] == false)
 {
 var mes = signupelement[j] + "mes";
-document.getElementById(signupelement[i]).className = "borderelement2";
+document.getElementById(signupelement[j]).className = "borderelement2";
 document.getElementById(mes).innerHTML = "";
 }
 }
