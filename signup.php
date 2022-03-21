@@ -59,35 +59,35 @@ $error = "connection failure";
         die ("Connection failed: " . $db->connect_error);
     }
     
-    $q1 = "SELECT * FROM Profile WHERE email = '$email'";
-    $r1 = $db->query($q1);
+  //  $q1 = "SELECT * FROM Profile WHERE email = '$email'";
+  //  $r1 = $db->query($q1);
 
     // if the email address is already taken.
-    if($r1->num_rows > 0)
-    {
-        $validate = false;
-    }
-    else
-    {
-        $emailMatch = preg_match($reg_Email, $email);
-        if($email == null || $email == "" || $emailMatch == false)
-        {
-            $validate = false;
-        }
+   // if($r1->num_rows > 0)
+   // {
+   //     $validate = false;
+   // }
+   // else
+   // {
+       // $emailMatch = preg_match($reg_Email, $email);
+       // if($email == null || $email == "" || $emailMatch == false)
+       // {
+     //       $validate = false;
+   //     }
         
               
-        $pswdLen = strlen($password);
-        $pswdMatch = preg_match($reg_Pswd, $password);
-        if($password == null || $password == "" || $pswdLen < 8 || $pswdMatch == false)
-        {
-            $validate = false;
-        }
+     //   $pswdLen = strlen($password);
+   //     $pswdMatch = preg_match($reg_Pswd, $password);
+  //      if($password == null || $password == "" || $pswdLen < 8 || $pswdMatch == false)
+//        {
+//            $validate = false;
+  //      }
 
-        $userMatch = preg_match($reg_User, $username);
-        if($username == null || $username == "")
-        {
-            $validate = false;
-        }
+      //  $userMatch = preg_match($reg_User, $username);
+    //    if($username == null || $username == "")
+     //   {
+    //        $validate = false;
+   //     }
     }
 
     if($validate == true)
