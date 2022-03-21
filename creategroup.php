@@ -112,7 +112,7 @@ if ($tempD == "Scholar");
 $GTag = "GER4";
 	}
 }
-      $q3 ="INSERT INTO Groups (groupname, ranktag, groupdescription) VALUES ('$nameT','$description','$GTag')";
+      $q3 ="INSERT INTO Groups (groupname, ranktag, groupdescription) VALUES ('$nameT','$GTag','$description')";
         $r3 = $db->query($q3);
 	  }
         if ($r3 === true)
