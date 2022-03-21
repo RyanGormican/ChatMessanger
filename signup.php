@@ -8,14 +8,14 @@ $reg_Email = "/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/";
 $reg_Pswd = "/^(\S*)?\d+(\S*)?$/";
 $reg_User="/\W/g";
 $email = "";
-//$photo2 = basename($_FILES["fileToUpload"]["name"]);
-//$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+$photo2 = basename($_FILES["fileToUpload"]["name"]);
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 if(isset($_POST["submitted"]) && $_POST["submitted"]) {
-//  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-  //if($check !== false) {
+  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+ if($check !== false) {
     $uploadOk = 1;
  } else {
-// $error = "check error";
+ $error = "check error";
     $uploadOk = 0;
   }
 
@@ -28,11 +28,11 @@ $error = "size big";
 }
 }
 // Allow certain file formats
-//if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-//&& $imageFileType != "gif" ) {
-//$error = "not correct file";
- // $uploadOk = 0;
-//}
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+$error = "not correct file";
+  $uploadOk = 0;
+}
 
 if(isset($_POST["submitted"]) && $_POST["submitted"]) {
 // Check if $uploadOk is set to 0 by an error
