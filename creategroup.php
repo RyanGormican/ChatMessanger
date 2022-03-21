@@ -93,7 +93,7 @@ else if ($tempG == "German")
 $tempD = trim($_POST['profiencyto']);
 if ($tempD == "Beginner")
 	{
-$GTag = "GER0GER1GER2GER3GER4"
+$GTag = "GER0GER1GER2GER3GER4";
 	}
 if ($tempD == "Intermediate")
 	{
@@ -121,6 +121,7 @@ $GTag = "GER4";
             $db->close();
             exit();
         }
+	}
 ?>
 <tr>
 <td colspan = "2">
