@@ -91,7 +91,7 @@ $GTag = "FRE4";
 }
 else if ($tempG == "German")
 {
-$tempD = trim($_POST["profiencyto");
+$tempD = trim($_POST["profiencyto"]);
 if ($tempD == "Beginner")
 	{
 $GTag = "GER0GER1GER2GER3GER4";
