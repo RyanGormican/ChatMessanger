@@ -1,7 +1,7 @@
 <?php
-$target_dir = "uploads/";
+//$target_dir = "uploads/";
 $validate = true;
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+//$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
  $error = "";
 $reg_Email = "/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/";
@@ -17,7 +17,7 @@ $email = "";
  //} else {
  //$error = "check error";
  //   $uploadOk = 0;
-  }
+ // }
 
 
 // Check file size
