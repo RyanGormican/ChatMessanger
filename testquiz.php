@@ -68,11 +68,12 @@ if (!empty($_POST)){
   $anst = $_POST[$loop];
     if ( isset($_POST[$rightquestion]) && !empty($_POST[$rightquestion]))
     {
-      $correctanswer++;
+    
    // $message = $message . "Question " . $loop . "was correct!" . "\n";
     }
     else
     {
+	    $correctanswer++;
    //     $message = $message . "Question " . $loop . "was not correct!" . "\n";
     }
   }
