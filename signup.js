@@ -5,7 +5,7 @@ function validateSignup(event)
 {
 var email = document.forms.signup.email.value;
 var username = document.forms.signup.username.value;
-var picture = document.forms.signup.picture.value;
+//var picture = document.forms.signup.picture.value;
 var password = document.forms.signup.password.value;
 var passwordconfirm = document.forms.signup.passwordconfirm.value;
 var fullvalidate = false;
@@ -47,19 +47,21 @@ else
 {
 signupelementwrong[1] = false;
 }
-var photo = document.getElementById("picture").value;
-var dotposition = photo.lastIndexOf(".")+1;
-var filetype = photo.substr(dotposition, photo.length).toLowerCase();
-if (filetype != "png"  || filetype != "jpg")
-{
-signupelementwrong[2] = true;
-document.getElementById("picturebordermes").innerHTML="Need to upload either a png or a jpg";
-}
 
-if (filetype == "png" || filetype == "jpg")
-{
+//var photo = document.getElementById("picture").value;
+//var dotposition = photo.lastIndexOf(".")+1;
+//var filetype = photo.substr(dotposition, photo.length).toLowerCase();
+//if (filetype != "png"  || filetype != "jpg")
+//{
+//signupelementwrong[2] = true;
+//document.getElementById("picturebordermes").innerHTML="Need to upload either a png or a jpg";
+//}
+
+//if (filetype == "png" || filetype == "jpg")
+//{
+//signupelementwrong[2] = false;
+//}
 signupelementwrong[2] = false;
-}
 var passwordcheck = /^(\S*)?\d+(\S*)?$/;
 if (password.length == 0)
 {
@@ -100,13 +102,13 @@ signupelementwrong[4] = false;
 
 for(var j=0; j<5; j++)
 {
-if(signupelementwrong[j] == true)
+if(signupelementwrong[j] == true && j !=2)
 {
 var changeclass = signupelement[j];
  document.getElementById(changeclass).className = "borderelementerror"; 
 fullvalidate = false;
 }
-else if(signupelementwrong[j] == false)
+else if(signupelementwrong[j] == false && j !=2)
 {
 var mes = signupelement[j] + "mes";
 document.getElementById(signupelement[j]).className = "borderelement2";
