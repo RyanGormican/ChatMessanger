@@ -36,7 +36,7 @@ header("Location: index.php");
 <input type="hidden" name="submitted" value="1"/>
   <table class = "messengerWindow2">
 <?php
-	  if (!empty($_POST)){
+	  if (isset($_POST["submitted"]) && $_POST["submitted"]){
 $nameT=  $_POST['name'];
 $description = $_POST['descriptiion'];
 $tempG =  $_POST['language'];
@@ -179,7 +179,7 @@ $GTag = "GER4";
     </table>
   <h2> 
        <a href="viewgroups.php" >Back  </a>   
-      <input type="submit" value ="Create Group"> 
+      <input type="submit" value ="submitted"> 
   </h2>
   </form>
 <br>
