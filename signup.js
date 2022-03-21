@@ -5,7 +5,7 @@ function validateSignup(event)
 {
 var email = document.forms.signup.email.value;
 var username = document.forms.signup.username.value;
-//var picture = document.forms.signup.picture.value;
+var picture = document.forms.signup.picture.value;
 var password = document.forms.signup.password.value;
 var passwordconfirm = document.forms.signup.passwordconfirm.value;
 var fullvalidate = false;
