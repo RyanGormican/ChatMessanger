@@ -65,6 +65,15 @@ if ($rankrow['rankid'] != NULL)
 {
 $rankt =  $rankrow['rankid'];
 }
+else
+{
+$t0 = "INSERT INTO Ranks(profile_id, rankid, ranklanguage) VALUES('$id','ENG0','ENGLISH'); 
+$r10 = $db->query($t0);
+$t1 = "INSERT INTO Ranks(profile_id, rankid, ranklanguage) VALUES('$id','ENG0','ENGLISH'); 
+$r11 = $db->query($t1);	
+$t2 = "INSERT INTO Ranks(profile_id, rankid, ranklanguage) VALUES('$id','ENG0','ENGLISH'); 
+$r12 = $db->query($t2);
+}
 $q1 = "SELECT  Groups.groupname,Groups.group_id, Groups.groupdescription, Groups.ranktag FROM Groups  WHERE Groups.ranktag LIKE '%$rankt%'";
 $result = mysqli_query($db,$q1);
  while($row = mysqli_fetch_assoc($result)) {   
