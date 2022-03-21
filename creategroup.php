@@ -38,7 +38,7 @@ header("Location: index.php");
 <?php
 	  if (isset($_POST["submitted"]) && $_POST["submitted"]){
 $nameT=  trim($_POST["name"]);
-$description = trim($_POST["descriptiion"]);
+$description = trim($_POST["description"]);
 $tempG =  trim($_POST["language"]);
 $GTag;
 if ($tempG == "English")
