@@ -97,7 +97,7 @@ var changeclass = signupelement[j];
  document.getElementById(changeclass).className = "borderelementerror"; 
 fullvalidate = false;
 }
-else if(signupelementwrong[j] == false && j != 2)
+else if(signupelementwrong[j] == false)
 {
 var mes = signupelement[j] + "mes";
 document.getElementById(signupelement[i]).className = "borderelement2";
