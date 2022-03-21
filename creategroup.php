@@ -40,6 +40,7 @@ header("Location: index.php");
 $nameT=  trim($_POST['name']);
 $description = trim($_POST['descriptiion']);
 $tempG =  trim($_POST['language']);
+$GTag;
 if ($tempG == "English")
 {
 $tempD = trim($_POST['profiencyto']);
