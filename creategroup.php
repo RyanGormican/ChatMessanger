@@ -37,9 +37,9 @@ header("Location: index.php");
   <table class = "messengerWindow2">
 <?php
 	  if (isset($_POST["submitted"]) && $_POST["submitted"]){
-$nameT=  $_POST['name'];
-$description = $_POST['descriptiion'];
-$tempG =  $_POST['language'];
+$nameT=  trim($_POST['name']);
+$description = trim($_POST['descriptiion']);
+$tempG =  trim($_POST['language']);
 if ($tempG == "English")
 {
 $tempD = $_POST['profiencyto'];
