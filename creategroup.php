@@ -42,32 +42,32 @@ $description = trim($_POST['descriptiion']);
 $tempG =  trim($_POST['language']);
 if ($tempG == "English")
 {
-$tempD = $_POST['profiencyto'];
-if ($tempD == "Beginner");
+$tempD = trim($_POST['profiencyto']);
+if ($tempD == "Beginner")
 	{
 $GTag = "ENG0ENG1ENG2ENG3ENG4";
 	}
-if ($tempD == "Intermediate");
+if ($tempD == "Intermediate")
 	{
 $GTag = "ENG1ENG2ENG3ENG4";
 	}
-if ($tempD == "Novice");
+if ($tempD == "Novice")
 	{
 $GTag = "ENG2ENG3ENG4";
 	}
-if ($tempD == "Expert");
+if ($tempD == "Expert")
 	{
 $GTag = "ENG3ENG4";
 	}
-if ($tempD == "Scholar");
+if ($tempD == "Scholar")
 	{
 $GTag = "ENG4";
 	}
 }
 else if ($tempG == "French")
 {
-$tempD = $_POST['profiencyto'];
-if ($tempD == "Beginner");
+$tempD = trim($_POST['profiencyto']);
+if ($tempD == "Beginner")
 	{
 $GTag = "FRE0FRE1FRE2FRE3FRE4";
 	}
@@ -90,7 +90,7 @@ $GTag = "FRE4";
 }
 else if ($tempG == "German")
 {
-$tempD = $_POST['profiencyto'];
+$tempD = trim($_POST['profiencyto']);
 if ($tempD == "Beginner")
 	{
 $GTag = "GER0GER1GER2GER3GER4"
