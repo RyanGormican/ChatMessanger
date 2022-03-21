@@ -8,15 +8,15 @@ $reg_Email = "/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/";
 $reg_Pswd = "/^(\S*)?\d+(\S*)?$/";
 $reg_User="/\W/g";
 $email = "";
-$photo2 = basename($_FILES["fileToUpload"]["name"]);
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-if(isset($_POST["submitted"]) && $_POST["submitted"]) {
-  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
- if($check !== false) {
-    $uploadOk = 1;
- } else {
- $error = "check error";
-    $uploadOk = 0;
+//$photo2 = basename($_FILES["fileToUpload"]["name"]);
+//$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+//if(isset($_POST["submitted"]) && $_POST["submitted"]) {
+//  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+ //if($check !== false) {
+ //   $uploadOk = 1;
+ //} else {
+ //$error = "check error";
+ //   $uploadOk = 0;
   }
 
 
@@ -34,15 +34,15 @@ $error = "not correct file";
   $uploadOk = 0;
 }
 
-if(isset($_POST["submitted"]) && $_POST["submitted"]) {
+//if(isset($_POST["submitted"]) && $_POST["submitted"]) {
 // Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-$validate = false;
+//if ($uploadOk == 0) {
+//$validate = false;
 // if everything is ok, try to upload file
-} else {
-  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-  } else {
-  }
+//} else {
+ // if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+ // } else {
+  //}
 }
 }
  if (isset($_POST["submitted"]) && $_POST["submitted"])
