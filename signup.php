@@ -101,13 +101,14 @@ $id = "image_id";
         if ($r3 === true)
         {	
 	$error = "going";
-            header("Location: mainpage.php");
+            header("Location: index.php");
             $db->close();
             exit();
         }
     }
     else
     {
+	header("Location: index.php");
         $db->close();
     }
 
