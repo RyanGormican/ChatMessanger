@@ -19,7 +19,6 @@ $email = "";
  //   $uploadOk = 0;
  // }
 
-
 // Check file size
 //if(isset($_POST["submitted"]) && $_POST["submitted"]) {
 //if ($_FILES["fileToUpload"]["size"] > 500000) {
