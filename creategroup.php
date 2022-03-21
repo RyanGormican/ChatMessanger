@@ -37,6 +37,11 @@ header("Location: index.php");
   <table class = "messengerWindow2">
 <?php
 	  if (isset($_POST["submitted"]) && $_POST["submitted"]){
+ $db = new mysqli("us-cdbr-east-05.cleardb.net", "b59706ca4e953f", "7aab941f", "heroku_4db4cf2503e4bbb");
+    if ($db->connect_error)
+    {
+        die ("Connection failed: " . $db->connect_error);
+    }
 $nameT=  trim($_POST["name"]);
 $description = trim($_POST["description"]);
 $tempG =  $_POST["language"];
