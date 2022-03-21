@@ -175,7 +175,7 @@ Profile Picture:
 <br>
  *contains 8 characters with one non-letter*
     </td>
-    <td class = "borderelement" id = "passwordborder">
+    <td class = "borderelement2" id = "passwordborder">
 <label class = "a"  id = "passwordbordermes"></label>
 <br> 
     <input type="password"  name="password" id= "password">
