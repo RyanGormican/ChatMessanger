@@ -64,16 +64,25 @@ if (isset($_POST["submitted"]) && $_POST["submitted"]){
   for ($loop = 1; $loop<= 10; $loop++){
   $question = $loop . "question";
   $rightquestion = $question . "win";
+  $rightquestion2 = $question . " win";
   $rightword = $_POST[$rightquestion];
   $anst = $_POST[$loop];
     if ( isset($_POST[$rightquestion]) && !empty($_POST[$rightquestion]))
     {
-    
+        $correctanswer++;
    // $message = $message . "Question " . $loop . "was correct!" . "\n";
     }
     else
     {
-	    $correctanswer++;
+   //     $message = $message . "Question " . $loop . "was not correct!" . "\n";
+    }
+    if ( isset($_POST[$rightquestion2]) && !empty($_POST[$rightquestion2]))
+    {
+        $correctanswer++;
+   // $message = $message . "Question " . $loop . "was correct!" . "\n";
+    }
+    else
+    {
    //     $message = $message . "Question " . $loop . "was not correct!" . "\n";
     }
   }
