@@ -68,6 +68,7 @@ $t1 = "INSERT INTO Ranks(profile_id, rankid, ranklanguage) VALUES('$id','FRE0','
 $r11 = $db->query($t1);	
 $t2 = "INSERT INTO Ranks(profile_id, rankid, ranklanguage) VALUES('$id','GER0','GERMAN')"; 
 $r12 = $db->query($t2);
+header("Location: viewgroups.php");
 }
 while ( $rankrow = $r9->fetch_assoc()) {
 if ($rankrow['rankid'] != NULL)
