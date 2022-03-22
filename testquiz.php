@@ -99,7 +99,7 @@ echo "<script>alert('Congratulations! You passed and your rank has now increased
     }
 else
 {
-  echo "<script>alert('To bad you did not pass the test! Your rank remains the same');window.location.href='testoverview.php';</script>";
+  echo "<script>alert('Too bad, you did not pass the test! Your rank remains the same');window.location.href='testoverview.php';</script>";
 //  $message = $message . "Too bad, you did not pass the test! Your rank remains the same.";
 }
 
