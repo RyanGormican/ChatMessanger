@@ -58,7 +58,7 @@ header("Location: index.php");
     {
         die ("Connection failed: " . $db->connect_error);
     }
-$q9 = "SELECT Ranks.rankid FROM Ranks, Profile WHERE Ranks.profile_id = '$id'";
+$q9 = "SELECT Ranks.rankid FROM Ranks WHERE Ranks.profile_id = '$id'";
 $r9 = $db->query($q9);
 if (mysqli_num_rows($r9) == 0) {
 $id =  trim($id);
