@@ -61,7 +61,6 @@ header("Location: index.php");
 $q9 = "SELECT Ranks.rankid FROM Ranks, Profile WHERE Ranks.profile_id = '$id'";
 $r9 = $db->query($q9);
 if (mysqli_num_rows($r9) == 0) {
-{
 $id =  trim($id);
 $t0 = "INSERT INTO Ranks(profile_id, rankid, ranklanguage) VALUES('$id','ENG0','ENGLISH')"; 
 $r10 = $db->query($t0);
