@@ -33,7 +33,7 @@ header("Location: index.php");
   <h2 class = "profileBorder">
   <tr>
   <td>
-<i class="fa-solid fa-book-atlas"></i> <a href="testoverview.php" >  Take Test </a> 
+<i class="fa-solid fa-book-atlas"></i> <a href="testoverview.php" >  Take a test, </a> 
     </td>
     </tr>
     <tr>
