@@ -73,7 +73,7 @@ while ( $rankrow = $r9->fetch_assoc()) {
 if ($rankrow['rankid'] != NULL)
 {
 $rankt =  $rankrow['rankid'];
-$q1 = "SELECT  Groups.groupname,Groups.group_id, Groups.groupdescription, Groups.ranktag FROM Groups  WHERE Groups.ranktag LIKE '%$rankt%'";
+$q1 = "SELECT DISTINCT Groups.groupname,Groups.group_id, Groups.groupdescription, Groups.ranktag FROM Groups  WHERE Groups.ranktag LIKE '%$rankt%'";
 $result = mysqli_query($db,$q1);
  while($row = mysqli_fetch_assoc($result)) {   
 $groupN = $row['groupname'];
