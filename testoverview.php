@@ -64,7 +64,7 @@ for ($i = 1; $i<5; $i++)
    echo "<td>";
   if ($i == 1)
   {
-  $dif = "Beginner";
+  $dif = "Intermediate";
   }
   else if($i == 2)
   {
