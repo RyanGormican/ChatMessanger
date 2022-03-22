@@ -95,12 +95,12 @@ if ($correctanswer >= $needright)
     $ranking2 = $languagedif; 
     $q10 = "UPDATE RANKS SET Ranks.rankid= '$ranking2' WHERE Ranks.profile_id = '$id' AND Ranks.ranklanguage = '$languagename'";
      $updatequery = mysqli_query($db,$q10);
-echo "<script>alert('Congratulations you passed and your rank has now increased!');window.location.href='testoverview.php';</script>";
+echo "<script>alert('Congratulations! You passed and your rank has now increased!');window.location.href='testoverview.php';</script>";
     }
 else
 {
   echo "<script>alert('To bad you did not pass the test! Your rank remains the same');window.location.href='testoverview.php';</script>";
-//  $message = $message . "To bad you did not pass the test! Your rank remains the same.";
+//  $message = $message . "Too bad, you did not pass the test! Your rank remains the same.";
 }
 
 
