@@ -64,19 +64,19 @@ for ($i = 1; $i<5; $i++)
    echo "<td>";
   if ($i == 1)
   {
-  $dif = "ENG1";
+  $dif = "Beginner";
   }
   else if($i == 2)
   {
-     $dif = "ENG2";
+     $dif = "Novice";
   }
   else if($i == 3)
   {
-    $dif = "ENG3";
+    $dif = "Expert";
   }
   else if($i == 4)
   {
-    $dif = "ENG4";
+    $dif = "Scholar";
   }
 if ($num < $i)
 {
