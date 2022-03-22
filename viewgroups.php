@@ -58,7 +58,7 @@ header("Location: index.php");
     {
         die ("Connection failed: " . $db->connect_error);
     }
-$q9 = "SELECT Ranks.rankid FROM Ranks, Profile WHERE Rank.profile_id = '$id'";
+$q9 = "SELECT Ranks.rankid FROM Ranks, Profile WHERE Ranks.profile_id = '$id'";
 $r9 = $db->query($q9);
 while ( $rankrow = $r9->fetch_assoc()) {
 if ($rankrow['rankid'] != NULL)
@@ -66,6 +66,16 @@ if ($rankrow['rankid'] != NULL)
 $rankt =  $rankrow['rankid'];
 $q1 = "SELECT  Groups.groupname,Groups.group_id, Groups.groupdescription, Groups.ranktag FROM Groups  WHERE Groups.ranktag LIKE '%$rankt%'";
 $result = mysqli_query($db,$q1);
+if 
+{
+$id =  trim($id);
+$t0 = "INSERT INTO Ranks(profile_id, rankid, ranklanguage) VALUES('$id','ENG0','ENGLISH')"; 
+$r10 = $db->query($t0);
+$t1 = "INSERT INTO Ranks(profile_id, rankid, ranklanguage) VALUES('$id','FRE0','FRENCH')"; 
+$r11 = $db->query($t1);	
+$t2 = "INSERT INTO Ranks(profile_id, rankid, ranklanguage) VALUES('$id','GER0','GERMAN')"; 
+$r12 = $db->query($t2);
+}
  while($row = mysqli_fetch_assoc($result)) {   
 $groupN = $row['groupname'];
 $groupD= $row['groupdescription'];
@@ -80,16 +90,6 @@ echo "<td colspan = '2'>";
 	  echo "</td>";
 	  echo "</tr>";
 }
-}
-else
-{
-$id =  trim($id);
-$t0 = "INSERT INTO Ranks(profile_id, rankid, ranklanguage) VALUES('$id','ENG0','ENGLISH')"; 
-$r10 = $db->query($t0);
-$t1 = "INSERT INTO Ranks(profile_id, rankid, ranklanguage) VALUES('$id','FRE0','FRENCH')"; 
-$r11 = $db->query($t1);	
-$t2 = "INSERT INTO Ranks(profile_id, rankid, ranklanguage) VALUES('$id','GER0','GERMAN')"; 
-$r12 = $db->query($t2);
 }
 
 }
