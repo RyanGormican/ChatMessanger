@@ -63,8 +63,8 @@ $message = "";
 if (isset($_POST["submitted"]) && $_POST["submitted"]){
   for ($loop = 1; $loop<= 10; $loop++){
   $question = $loop . "question";
-  $rightquestion = $question . "win";
-  $rightquestion2 = $question . " win";
+  $rightquestion = $loop . "win";
+  $rightquestion2 = $loop . " win";
   $rightword = $_POST[$rightquestion];
   $anst = $_POST[$loop];
     if ( isset($_POST[$rightquestion]) && !empty($_POST[$rightquestion]))
